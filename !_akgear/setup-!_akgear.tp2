@@ -1,0 +1,14 @@
+BACKUP 	~!_akgear/Backup~
+AUTHOR 	~Incrementis (incrementis@gmail.com)~
+VERSION ~v0.0.1 pre alpha~
+
+LANGUAGE
+	~English~	// Language
+	~English~	// Directory
+	//TODO: include tra files
+LANGUAGE
+	~Deutsch~	// Language
+	~German~	// Directory
+	//TODO: include tra files
+
+BEGIN @1
