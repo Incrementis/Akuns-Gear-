@@ -1,1 +1,49 @@
-@<reference number>=~<Name of the item>~
+// ----------------------
+// Unidentified item name
+// ----------------------
+@2=~Katana~
+
+// --------------------
+// Identified item name
+// --------------------
+@3=~Weave to Dust~
+
+// ------------------------
+// Unidentified description
+// ------------------------
+@4=~The katana is a single-edged, slightly curved sword that ends with a chisel point. The katana is perhaps one of the finest swords ever made, the steps to its creation a long and secret process that is more art form than anything else. This blade is an important facet of Kara-Turan culture. To touch or wield a samurai's katana is to insult the samurai and to incite his wrath. For a gaijin, or foreigner, to own such a blade is a rare occurrence. Either the gaijin is a greatly honored friend of an important minister, or the gaijin has murdered a samurai.
+
+STATISTICS:
+
+Damage: 1d10 (slashing)
+Speed Factor: 4
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 6~
+
+// ----------------------
+// Identified description
+// ----------------------
+@5=~This enchanted katana is called Weave to Dust. Its name comes from its ability to dispel any wards, a caster has cast on himself, with one successful hit. It's actually part of a set of Wizard Slayer gear. On closer inspection, it becomes clear that this sword, with its numerous gemstones on the hilt, is not a classic Kara-Tur katana. It was forged in Calimshan by an unknown blacksmith. The idea behind this sword is to combine a near-perfect battle sword with the stunning aesthetics of the Calimshan Forge. The customer who commissioned this sword from the unknown smith is himself known as Akun Zaran, a Wizard Slayer.
+
+STATISTICS:
+
+Combat abilities:
+– The weapon has a 15% chance to cast Breach on a successful hit
+
+Restrictions:
+- Character needs level 4 to equip „Weave to Dust“
+- Wizard Slayer only
+
+THAC0: +1
+Damage: 1d10+1 (slashing)
+Speed Factor: 3
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
