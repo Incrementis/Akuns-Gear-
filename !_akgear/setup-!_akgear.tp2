@@ -1,14 +1,74 @@
+// Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
 AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.0.1 pre alpha~
+VERSION ~v0.0.2 pre alpha~
 
 LANGUAGE
 	~English~	// Language
 	~English~	// Directory
 	//TODO: include tra files
+	~!_akgear/English/!_setup.tra~
+	~!_akgear/English/!_watodu.tra~
+	
 LANGUAGE
 	~Deutsch~	// Language
 	~German~	// Directory
 	//TODO: include tra files
 
+
+// -------------------------
+// Install "Akun's Gear" Mod
+// -------------------------
 BEGIN @1
+// ITEM CONSTANTS (Don't touch this!)
+OUTER_SET ITM_SIGNATURE				= 0x0000
+OUTER_SET ITM_VERSION				= 0x0004
+OUTER_SET ITM_PRICE 				= 0x0034
+OUTER_SET ITM_WEIGHT				= 0x004c
+OUTER_SET ITM_LORE					= 0x0042
+OUTER_SET ITM_MIN_STRENGTH			= 0x0026
+OUTER_SET ITM_MIN_STRENGTH_BONUS	= 0x0028 // Example needed!
+OUTER_SET ITM_MIN_LEVEL				= 0x0024
+OUTER_SET ITM_MIN_INTELLIGENCE		= 0x002a // Not used
+OUTER_SET ITM_MIN_DEXTERITY			= 0x002c // Not used
+OUTER_SET ITM_MIN_WISDOM			= 0x002e // Not used
+OUTER_SET ITM_MIN_CONSTITUTION		= 0x0030 // Not used
+OUTER_SET ITM_MIN_CHARISMA			= 0x0032 // Not used
+OUTER_SET ITM_MAX_IN_STACK			= 0x0038 
+OUTER_SET ITM_ENCHANTMENT			= 0x0060 
+OUTER_SET ITM_USED_UP_ITEM			= 0x0010
+
+
+// GLOBAL VARIABLES (Changable)
+OUTER_SPRINT signature			 ~ITM~ 	// Doesn't work with WRITE_ASCII
+OUTER_TEXT_SPRINT version		 ~V1~	// Doesn't work with WRITE_ASCII	
+OUTER_SET price	 				= 10000
+OUTER_SET weight 				= 4
+OUTER_SET lore 					= 25
+OUTER_SET min_strength 			= 6
+OUTER_SET min_strength_bonus 	= 0 // Don't change value
+OUTER_SET min_level 			= 4
+OUTER_SET max_in_stack 			= 1
+OUTER_SET enchantment 			= 1
+OUTER_SET used_up_item 			= 0 // Works, but only for 0(None)
+
+
+// KATANA: "WEAVE TO DUST"
+COPY ~!_akgear/Items/!_SW1HWD.ITM~ ~override/!_SW1HWD.ITM~
+
+	SAY NAME1 				@2 	// Unidentified item name
+	SAY NAME2 				@3 	// Identified item name 		
+	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
+	SAY DESC 				@5 	// Identified description				
+	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
+	WRITE_ASCII	ITM_VERSION				~V1~		
+	WRITE_LONG 	ITM_PRICE				price
+	WRITE_SHORT ITM_WEIGHT 				weight 	
+	WRITE_SHORT ITM_LORE 				lore 
+	WRITE_SHORT ITM_USED_UP_ITEM		used_up_item	
+	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
+	WRITE_BYTE 	ITM_MIN_STRENGTH_BONUS 	min_strength_bonus
+	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
+	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
+	WRITE_BYTE	ITM_ENCHANTMENT	 		enchantment
+	
