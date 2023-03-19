@@ -37,11 +37,23 @@ OUTER_SET ITM_MIN_CHARISMA			= 0x0032 // Not used
 OUTER_SET ITM_MAX_IN_STACK			= 0x0038 
 OUTER_SET ITM_ENCHANTMENT			= 0x0060 
 OUTER_SET ITM_USED_UP_ITEM			= 0x0010
+OUTER_SET ITM_FLAGS					= 0x0018
+OUTER_SET ITM_TYPE					= 0x001c
+OUTER_SET ITM_UNUSABLE_BY			= 0x001e
+OUTER_SET ITM_UNUSABLE_KIT1			= 0x0029
+OUTER_SET ITM_UNUSABLE_KIT2			= 0x002b
+OUTER_SET ITM_UNUSABLE_KIT3			= 0x002d
+OUTER_SET ITM_UNUSABLE_KIT4			= 0x002f
+OUTER_SET ITM_WEAPON_PROFICIENCY	= 0x0031
+OUTER_SET ITM_GROUND_ICON			= 0x0044
+OUTER_SET ITM_DESCRIPTION_IMAGE		= 0x0058
+OUTER_SET ITM_INVENTORY_ICON		= 0x003a
+
 
 
 // GLOBAL VARIABLES (Changable)
-OUTER_SPRINT signature			 ~ITM~ 	// Doesn't work with WRITE_ASCII
-OUTER_TEXT_SPRINT version		 ~V1~	// Doesn't work with WRITE_ASCII	
+OUTER_SPRINT signature			 	~ITM~ 	// Doesn't work with WRITE_ASCII
+OUTER_TEXT_SPRINT version		 	~V1~	// Doesn't work with WRITE_ASCII		
 OUTER_SET price	 				= 10000
 OUTER_SET weight 				= 4
 OUTER_SET lore 					= 25
@@ -51,24 +63,52 @@ OUTER_SET min_level 			= 4
 OUTER_SET max_in_stack 			= 1
 OUTER_SET enchantment 			= 1
 OUTER_SET used_up_item 			= 0 // Works, but only for 0(None)
+OUTER_SET flags 				= 0b00000000000000000000000001101100
+OUTER_SET unusable_by			= 0b01100000011111111111011111000000
+OUTER_SET unusable_kit1			= 0b11111111
+OUTER_SET unusable_kit2			= 0b11111111
+OUTER_SET unusable_kit3			= 0b11111111
+OUTER_SET unusable_kit4			= 0b11111101
+
+
 
 
 // KATANA: "WEAVE TO DUST"
 COPY ~!_akgear/Items/!_SW1HWD.ITM~ ~override/!_SW1HWD.ITM~
 
+	// LOCAL VARIABLES
+	SET type 				= 0x14
+	SET weapon_proficiency 	= 0x5E
+	TEXT_SPRINT ground_icon	 		~V2~	// Doesn't work with WRITE_ASCII	
+	TEXT_SPRINT description_image	~V3~	// Doesn't work with WRITE_ASCII	
+	TEXT_SPRINT inventory_icon		~V4~	// Doesn't work with WRITE_ASCII
+
+	// ITEM PROPERTIES
 	SAY NAME1 				@2 	// Unidentified item name
 	SAY NAME2 				@3 	// Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
 	SAY DESC 				@5 	// Identified description				
 	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
 	WRITE_ASCII	ITM_VERSION				~V1~		
+	WRITE_ASCII	ITM_GROUND_ICON			~TODO~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~TODO~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~TODO~		
 	WRITE_LONG 	ITM_PRICE				price
+	WRITE_LONG 	ITM_FLAGS				flags
+	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
 	WRITE_SHORT ITM_WEIGHT 				weight 	
 	WRITE_SHORT ITM_LORE 				lore 
 	WRITE_SHORT ITM_USED_UP_ITEM		used_up_item	
+	WRITE_SHORT ITM_TYPE				type	
 	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
 	WRITE_BYTE 	ITM_MIN_STRENGTH_BONUS 	min_strength_bonus
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
 	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
 	WRITE_BYTE	ITM_ENCHANTMENT	 		enchantment
+	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	weapon_proficiency
+	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
+	
 	
