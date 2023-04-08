@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
 AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.0.2 pre alpha~
+VERSION ~v0.0.4 pre alpha~
 
 LANGUAGE
 	~English~	// Language
@@ -20,7 +20,7 @@ LANGUAGE
 // Install "Akun's Gear" Mod
 // -------------------------
 BEGIN @1
-// ITEM CONSTANTS (Don't touch this!)
+// ITEM CONSTANTS HEADER(Don't touch this!)
 OUTER_SET ITM_SIGNATURE				= 0x0000
 OUTER_SET ITM_VERSION				= 0x0004
 OUTER_SET ITM_PRICE 				= 0x0034
@@ -48,12 +48,19 @@ OUTER_SET ITM_WEAPON_PROFICIENCY	= 0x0031
 OUTER_SET ITM_GROUND_ICON			= 0x0044
 OUTER_SET ITM_DESCRIPTION_IMAGE		= 0x0058
 OUTER_SET ITM_INVENTORY_ICON		= 0x003a
+OUTER_SET ITM_ANIMATION				= 0x0022
+OUTER_SET ITM_NUMBER_OF_ABILITIES	= 0x0068
+
+
+
+// ITEM CONSTANTS EXTENDED HEADER(Don't touch this!)
+OUTER_SET ITM_ATTACK_TYPE		= 0x0072 // Not a smart solution!
 
 
 
 // GLOBAL VARIABLES (Changable)
-OUTER_SPRINT signature			 	~ITM~ 	// Doesn't work with WRITE_ASCII
-OUTER_TEXT_SPRINT version		 	~V1~	// Doesn't work with WRITE_ASCII		
+OUTER_SPRINT signature 			 ~ITM~ 	// Doesn't work with WRITE_ASCII
+OUTER_TEXT_SPRINT version 		 ~V1~	// Doesn't work with WRITE_ASCII		
 OUTER_SET price	 				= 10000
 OUTER_SET weight 				= 4
 OUTER_SET lore 					= 25
@@ -64,13 +71,12 @@ OUTER_SET max_in_stack 			= 1
 OUTER_SET enchantment 			= 1
 OUTER_SET used_up_item 			= 0 // Works, but only for 0(None)
 OUTER_SET flags 				= 0b00000000000000000000000001101100
+// Binaries result in only usable by Wizard Slayer
 OUTER_SET unusable_by			= 0b01100000011111111111011111000000
 OUTER_SET unusable_kit1			= 0b11111111
 OUTER_SET unusable_kit2			= 0b11111111
 OUTER_SET unusable_kit3			= 0b11111111
 OUTER_SET unusable_kit4			= 0b11111101
-
-
 
 
 // KATANA: "WEAVE TO DUST"
@@ -79,27 +85,33 @@ COPY ~!_akgear/Items/!_SW1HWD.ITM~ ~override/!_SW1HWD.ITM~
 	// LOCAL VARIABLES
 	SET type 				= 0x14
 	SET weapon_proficiency 	= 0x5E
-	TEXT_SPRINT ground_icon	 		~V2~	// Doesn't work with WRITE_ASCII	
-	TEXT_SPRINT description_image	~V3~	// Doesn't work with WRITE_ASCII	
-	TEXT_SPRINT inventory_icon		~V4~	// Doesn't work with WRITE_ASCII
+	SET animation		 	= 0x3353
+	SET number_of_abilities = 1 	// Creates ability slots if increased
+	SET attack_type		 	= 0x01 	// Not a smart solution!
+	
+	TEXT_SPRINT ground_icon	 		~!_GMSW1H~	// Doesn't work with WRITE_ASCII	
+	TEXT_SPRINT description_image	~V3~		// Doesn't work with WRITE_ASCII	
+	TEXT_SPRINT inventory_icon		~V4~		// Doesn't work with WRITE_ASCII
 
-	// ITEM PROPERTIES
+	// ITEM PROPERTIES (HEADER)
 	SAY NAME1 				@2 	// Unidentified item name
 	SAY NAME2 				@3 	// Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
 	SAY DESC 				@5 	// Identified description				
 	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
 	WRITE_ASCII	ITM_VERSION				~V1~		
-	WRITE_ASCII	ITM_GROUND_ICON			~TODO~		
-	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~TODO~		
-	WRITE_ASCII	ITM_INVENTORY_ICON		~TODO~		
+	WRITE_ASCII	ITM_GROUND_ICON			~!_GMSW1H~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1WD~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISW1WD~
 	WRITE_LONG 	ITM_PRICE				price
 	WRITE_LONG 	ITM_FLAGS				flags
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
 	WRITE_SHORT ITM_WEIGHT 				weight 	
 	WRITE_SHORT ITM_LORE 				lore 
 	WRITE_SHORT ITM_USED_UP_ITEM		used_up_item	
-	WRITE_SHORT ITM_TYPE				type	
+	WRITE_SHORT ITM_TYPE				type
+	WRITE_SHORT ITM_ANIMATION			animation	
+	WRITE_SHORT ITM_NUMBER_OF_ABILITIES	number_of_abilities	
 	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
 	WRITE_BYTE 	ITM_MIN_STRENGTH_BONUS 	min_strength_bonus
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
@@ -110,5 +122,24 @@ COPY ~!_akgear/Items/!_SW1HWD.ITM~ ~override/!_SW1HWD.ITM~
 	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
+
+ 	//TODO: Finish it!
+	LPF ALTER_ITEM_HEADER
+		INT_VAR
+			header_type = 1
+			match_icon = 1
+		STR_VAR
+			icon = ~!_ISW1WD~
+	END
+
+	//TODO: Finish it!
+	LPF ADD_ITEM_EFFECT
+		INT_VAR
+			type = 1 		// Min Neccessarry!
+	END
+
 	
-	
+
+
+// BAM FILES FOR ALL ITEMS
+COPY ~!_akgear/BAM~ ~override~
