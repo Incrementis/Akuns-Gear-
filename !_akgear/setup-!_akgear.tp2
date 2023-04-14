@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
 AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.0.4 pre alpha~
+VERSION ~v0.2.5 alpha~
 
 LANGUAGE
 	~English~	// Language
@@ -20,14 +20,30 @@ LANGUAGE
 // Install "Akun's Gear" Mod
 // -------------------------
 BEGIN @1
+// GLOBAL INCLUDES(Don't touch this!)
+// ----------------------------------
+INCLUDE ~%MOD_FOLDER%/lib/simp_AddItemHeader.tph~
+
+
+// CREATING ITEM FILES
+// -------------------
+CREATE ~ITM~ ~!_SW1HWD~	// "Weave to Dust"
+
+
+// BAM FILES FOR ALL ITEMS
+// -----------------------
+COPY ~!_akgear/BAM~ ~override~
+
+
 // ITEM CONSTANTS HEADER(Don't touch this!)
+// ----------------------------------------
 OUTER_SET ITM_SIGNATURE				= 0x0000
 OUTER_SET ITM_VERSION				= 0x0004
 OUTER_SET ITM_PRICE 				= 0x0034
 OUTER_SET ITM_WEIGHT				= 0x004c
 OUTER_SET ITM_LORE					= 0x0042
 OUTER_SET ITM_MIN_STRENGTH			= 0x0026
-OUTER_SET ITM_MIN_STRENGTH_BONUS	= 0x0028 // Example needed!
+OUTER_SET ITM_MIN_STRENGTH_BONUS	= 0x0028 // Not sure what this is(Example needed)!
 OUTER_SET ITM_MIN_LEVEL				= 0x0024
 OUTER_SET ITM_MIN_INTELLIGENCE		= 0x002a // Not used
 OUTER_SET ITM_MIN_DEXTERITY			= 0x002c // Not used
@@ -52,26 +68,19 @@ OUTER_SET ITM_ANIMATION				= 0x0022
 OUTER_SET ITM_NUMBER_OF_ABILITIES	= 0x0068
 
 
-
-// ITEM CONSTANTS EXTENDED HEADER(Don't touch this!)
-OUTER_SET ITM_ATTACK_TYPE		= 0x0072 // Not a smart solution!
-
-
-
 // GLOBAL VARIABLES (Changable)
-OUTER_SPRINT signature 			 ~ITM~ 	// Doesn't work with WRITE_ASCII
-OUTER_TEXT_SPRINT version 		 ~V1~	// Doesn't work with WRITE_ASCII		
+// ----------------------------	
 OUTER_SET price	 				= 10000
 OUTER_SET weight 				= 4
 OUTER_SET lore 					= 25
 OUTER_SET min_strength 			= 6
-OUTER_SET min_strength_bonus 	= 0 // Don't change value
+OUTER_SET min_strength_bonus 	= 0 // Don't change value!
 OUTER_SET min_level 			= 4
 OUTER_SET max_in_stack 			= 1
 OUTER_SET enchantment 			= 1
 OUTER_SET used_up_item 			= 0 // Works, but only for 0(None)
 OUTER_SET flags 				= 0b00000000000000000000000001101100
-// Binaries result in only usable by Wizard Slayer
+// Binaries result item only usable by Wizard Slayer
 OUTER_SET unusable_by			= 0b01100000011111111111011111000000
 OUTER_SET unusable_kit1			= 0b11111111
 OUTER_SET unusable_kit2			= 0b11111111
@@ -79,21 +88,23 @@ OUTER_SET unusable_kit3			= 0b11111111
 OUTER_SET unusable_kit4			= 0b11111101
 
 
-// KATANA: "WEAVE TO DUST"
-COPY ~!_akgear/Items/!_SW1HWD.ITM~ ~override/!_SW1HWD.ITM~
+// PATCHING ITEM FILE "Weave to Dust"
+// ----------------------------------
+COPY_EXISTING ~!_SW1HWD.ITM~ override
+	// LOCAL INCLUDES(Content changeable)
+	// ----------------------------------
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/WeaveToDust.tph~
+
 
 	// LOCAL VARIABLES
+	// ---------------
 	SET type 				= 0x14
 	SET weapon_proficiency 	= 0x5E
 	SET animation		 	= 0x3353
-	SET number_of_abilities = 1 	// Creates ability slots if increased
-	SET attack_type		 	= 0x01 	// Not a smart solution!
-	
-	TEXT_SPRINT ground_icon	 		~!_GMSW1H~	// Doesn't work with WRITE_ASCII	
-	TEXT_SPRINT description_image	~V3~		// Doesn't work with WRITE_ASCII	
-	TEXT_SPRINT inventory_icon		~V4~		// Doesn't work with WRITE_ASCII
+
 
 	// ITEM PROPERTIES (HEADER)
+	// ------------------------
 	SAY NAME1 				@2 	// Unidentified item name
 	SAY NAME2 				@3 	// Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
@@ -111,7 +122,6 @@ COPY ~!_akgear/Items/!_SW1HWD.ITM~ ~override/!_SW1HWD.ITM~
 	WRITE_SHORT ITM_USED_UP_ITEM		used_up_item	
 	WRITE_SHORT ITM_TYPE				type
 	WRITE_SHORT ITM_ANIMATION			animation	
-	WRITE_SHORT ITM_NUMBER_OF_ABILITIES	number_of_abilities	
 	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
 	WRITE_BYTE 	ITM_MIN_STRENGTH_BONUS 	min_strength_bonus
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
@@ -122,24 +132,4 @@ COPY ~!_akgear/Items/!_SW1HWD.ITM~ ~override/!_SW1HWD.ITM~
 	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
-
- 	//TODO: Finish it!
-	LPF ALTER_ITEM_HEADER
-		INT_VAR
-			header_type = 1
-			match_icon = 1
-		STR_VAR
-			icon = ~!_ISW1WD~
-	END
-
-	//TODO: Finish it!
-	LPF ADD_ITEM_EFFECT
-		INT_VAR
-			type = 1 		// Min Neccessarry!
-	END
-
-	
-
-
-// BAM FILES FOR ALL ITEMS
-COPY ~!_akgear/BAM~ ~override~
+BUT_ONLY // End patching: ~!_SW1HWD.ITM~
