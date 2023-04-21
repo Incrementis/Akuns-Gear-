@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
 AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.2.5 alpha~
+VERSION ~v0.3.6 alpha~
 
 LANGUAGE
 	~English~	// Language
@@ -45,11 +45,6 @@ OUTER_SET ITM_LORE					= 0x0042
 OUTER_SET ITM_MIN_STRENGTH			= 0x0026
 OUTER_SET ITM_MIN_STRENGTH_BONUS	= 0x0028 // Not sure what this is(Example needed)!
 OUTER_SET ITM_MIN_LEVEL				= 0x0024
-OUTER_SET ITM_MIN_INTELLIGENCE		= 0x002a // Not used
-OUTER_SET ITM_MIN_DEXTERITY			= 0x002c // Not used
-OUTER_SET ITM_MIN_WISDOM			= 0x002e // Not used
-OUTER_SET ITM_MIN_CONSTITUTION		= 0x0030 // Not used
-OUTER_SET ITM_MIN_CHARISMA			= 0x0032 // Not used
 OUTER_SET ITM_MAX_IN_STACK			= 0x0038 
 OUTER_SET ITM_ENCHANTMENT			= 0x0060 
 OUTER_SET ITM_USED_UP_ITEM			= 0x0010
@@ -76,7 +71,7 @@ OUTER_SET lore 					= 25
 OUTER_SET min_strength 			= 6
 OUTER_SET min_strength_bonus 	= 0 // Don't change value!
 OUTER_SET min_level 			= 4
-OUTER_SET max_in_stack 			= 1
+OUTER_SET max_in_stack 			= 3
 OUTER_SET enchantment 			= 1
 OUTER_SET used_up_item 			= 0 // Works, but only for 0(None)
 OUTER_SET flags 				= 0b00000000000000000000000001101100

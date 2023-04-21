@@ -30,14 +30,14 @@ LPF ADD_ITEM_EQEFFECT
 	END
 // NEW ITEM HEADER (MACRO/LIB)
 // ---------------------------
-LPF ADD_ITEM_HEADER END
+LPF SIMP_ADD_ITEM_HEADER END
 // VALUES TO ITEM HEADER
 // ---------------------
 LPF ALTER_ITEM_HEADER
 	INT_VAR
 		header_type 			= 0 // Check if item header type is "None"
 		match_icon 				= 1 // Use string value of variable "icon"
-		header					= 1 // Alter only x item abilities
+		header					= 1 // Alter only x item abilities(0=every item ability)
 		location 				= 1 // Weapon
 		new_header_type 		= 1 // None to Melee
 		target					= 1 // Living actor
@@ -59,6 +59,7 @@ END
 LPF ADD_ITEM_EFFECT
 	INT_VAR
 		opcode 			= 58// Dispel effects
+		header			= 1 // Add effect to only x item abilities(0=every item ability)
 		type 			= 1 // Add effect to item ability with type x(1 = Melee)
 		target 			= 2 // Preset target
 		probability1 	= 20// x% chance of activating the effect
