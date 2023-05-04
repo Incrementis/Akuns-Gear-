@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
 AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.3.6 alpha~
+VERSION ~v0.4.6 alpha~
 
 LANGUAGE
 	~English~	// Language
@@ -9,6 +9,7 @@ LANGUAGE
 	//TODO: include tra files
 	~!_akgear/English/!_setup.tra~
 	~!_akgear/English/!_watodu.tra~
+	~!_akgear/English/!_laofco.tra~
 	
 LANGUAGE
 	~Deutsch~	// Language
@@ -28,6 +29,7 @@ INCLUDE ~%MOD_FOLDER%/lib/simp_AddItemHeader.tph~
 // CREATING ITEM FILES
 // -------------------
 CREATE ~ITM~ ~!_SW1HWD~	// "Weave to Dust"
+CREATE ~ITM~ ~!_PLATLC~	// "Layers of Compassion"
 
 
 // BAM FILES FOR ALL ITEMS
@@ -67,12 +69,11 @@ OUTER_SET ITM_NUMBER_OF_ABILITIES	= 0x0068
 // ----------------------------	
 OUTER_SET price	 				= 10000
 OUTER_SET weight 				= 4
-OUTER_SET lore 					= 25
+OUTER_SET lore 					= 40
 OUTER_SET min_strength 			= 6
 OUTER_SET min_strength_bonus 	= 0 // Don't change value!
 OUTER_SET min_level 			= 4
-OUTER_SET max_in_stack 			= 3
-OUTER_SET enchantment 			= 1
+OUTER_SET max_in_stack 			= 1
 OUTER_SET used_up_item 			= 0 // Works, but only for 0(None)
 OUTER_SET flags 				= 0b00000000000000000000000001101100
 // Binaries result item only usable by Wizard Slayer
@@ -96,6 +97,7 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 	SET type 				= 0x14
 	SET weapon_proficiency 	= 0x5E
 	SET animation		 	= 0x3353
+	SET enchantment 		= 1
 
 
 	// ITEM PROPERTIES (HEADER)
@@ -106,7 +108,7 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 	SAY DESC 				@5 	// Identified description				
 	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
 	WRITE_ASCII	ITM_VERSION				~V1~		
-	WRITE_ASCII	ITM_GROUND_ICON			~!_GMSW1H~		
+	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
 	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1WD~		
 	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISW1WD~
 	WRITE_LONG 	ITM_PRICE				price
@@ -128,3 +130,53 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
 BUT_ONLY // End patching: ~!_SW1HWD.ITM~
+
+
+// PATCHING ITEM FILE "Layers of Compassion"
+// -----------------------------------------
+COPY_EXISTING ~!_PLATLC.ITM~ override
+	// LOCAL INCLUDES(Content changeable)	
+	// ----------------------------------
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/LayersOfCompassion.tph~
+
+
+	// LOCAL VARIABLES
+	// ---------------
+	SET type 				= 0x02
+	SET weapon_proficiency 	= 0x00
+	SET animation		 	= 0x4134
+	SET lc_weight			= 50
+	SET lc_min_strength		= 12
+	SET enchantment 		= 0
+
+
+	// ITEM PROPERTIES (HEADER)
+	// ------------------------
+	SAY NAME1 				@6 	// Unidentified item name
+	SAY NAME2 				@7 	// Identified item name 		
+	SAY UNIDENTIFIED_DESC 	@8 	// Unidentified description	
+	SAY DESC 				@9 	// Identified description				
+	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
+	WRITE_ASCII	ITM_VERSION				~V1~		
+	WRITE_ASCII	ITM_GROUND_ICON			~GPLAT01~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CPLTLC~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~!_IPLTLC~
+	WRITE_LONG 	ITM_PRICE				price
+	WRITE_LONG 	ITM_FLAGS				flags
+	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
+	WRITE_SHORT ITM_WEIGHT 				lc_weight 	
+	WRITE_SHORT ITM_LORE 				lore 
+	WRITE_SHORT ITM_USED_UP_ITEM		used_up_item	
+	WRITE_SHORT ITM_TYPE				type
+	WRITE_SHORT ITM_ANIMATION			animation	
+	WRITE_BYTE	ITM_MIN_STRENGTH 		lc_min_strength
+	WRITE_BYTE 	ITM_MIN_STRENGTH_BONUS 	min_strength_bonus
+	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
+	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
+	WRITE_BYTE	ITM_ENCHANTMENT	 		enchantment
+	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	weapon_proficiency
+	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
+BUT_ONLY // End patching: ~!_PLATLC.ITM~

@@ -1,1 +1,42 @@
-@<reference number>=~<Name of the item>~
+// ----------------------
+// Unidentified item name
+// ----------------------
+@6=~Plate Mail~
+
+// --------------------
+// Identified item name
+// --------------------
+@7=~Layers of Compassion~
+
+// ------------------------
+// Unidentified description
+// ------------------------
+@8=~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+
+// ----------------------
+// Identified description
+// ----------------------
+@9=~This enchanted plate armor is called "Layers of Compassion". It's actually part of a set of Wizard Slayer gear. Its name comes from its ability to absorb various types of magical damage. Its golden appearance is purely a design choice, but not so much the glowing green jewel in the center of the plate armor. It was forged in Calimshan by an unknown blacksmith. Also, whoever forged "Layers of Compassion" appears to be a master of arcane forging. Upon closer inspection, the magic in this plate armor seems somehow incomplete. The customer who commissioned this sword from the unknown smith is himself known as Akun Zaran, a Wizard Slayer.
+
+STATISTICS:
+
+Combat abilities:
+- 25% resistance to fire, cold, electricity, poison, acid and magical damage
+
+Restrictions:
+- Character needs level 4 to equip „Power Crave“
+- Can only be equipped by Wizard Slayer
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~

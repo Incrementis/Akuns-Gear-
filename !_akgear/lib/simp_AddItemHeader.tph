@@ -1,8 +1,8 @@
 // Main-Source: https://github.com/Gibberlings3/ItemRevisions/blob/master/item_rev/lib/macros.tpa
 // Main-Source code is heavily modified to serve personal needs.
 
-// Purpose: Adds an item ability section
-// -------------------------------------
+// Purpose: Adds an default item ability section
+// ---------------------------------------------
 DEFINE_PATCH_FUNCTION ~SIMP_ADD_ITEM_HEADER~
 BEGIN
   hs      =   0x38
