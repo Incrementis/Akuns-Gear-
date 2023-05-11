@@ -36,8 +36,8 @@ LPF ADD_ITEM_EQEFFECT
 	INT_VAR
 		opcode 		= 9	// Set color glow pulse
 		target		= 1	// Self
-		parameter1 = ((0 << 8) + (200 << 16) + (0 << 24)) 	// ((red << 8) + (green << 16) + (blue << 24))
-		parameter2 	= 0 + (50 << 16) 						// Belt/Amulet and cycle speed (Location + (Cycle speed << 16))
+		parameter1 = ((0 << 8) + (200 << 16) + (0 << 24)) 	// Shiny Green...((red << 8) + (green << 16) + (blue << 24))
+		parameter2 	= 0 + (50 << 16) 						// Belt/Amulet and Cycle speed...(Location + (Cycle speed << 16))
 		timing 		= 2	 // Instant/While equipped
 END
 // EQ AC TO VALUE

@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
 AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.4.6 alpha~
+VERSION ~v0.4.7 alpha~
 
 LANGUAGE
 	~English~	// Language
@@ -76,7 +76,7 @@ OUTER_SET min_level 			= 4
 OUTER_SET max_in_stack 			= 1
 OUTER_SET used_up_item 			= 0 // Works, but only for 0(None)
 OUTER_SET flags 				= 0b00000000000000000000000001101100
-// Binaries result item only usable by Wizard Slayer
+// Binaries result in item only usable by Wizard Slayer
 OUTER_SET unusable_by			= 0b01100000011111111111011111000000
 OUTER_SET unusable_kit1			= 0b11111111
 OUTER_SET unusable_kit2			= 0b11111111
@@ -94,10 +94,10 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 
 	// LOCAL VARIABLES
 	// ---------------
-	SET type 				= 0x14
-	SET weapon_proficiency 	= 0x5E
-	SET animation		 	= 0x3353
-	SET enchantment 		= 1
+	SET type 				= 0x14		//TODO:What is this?
+	SET weapon_proficiency 	= 0x5E		//TODO:What is this?
+	SET animation		 	= 0x3353	//TODO:What is this?
+	SET enchantment 		= 1			//TODO:What is this?
 
 
 	// ITEM PROPERTIES (HEADER)
@@ -142,12 +142,12 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 
 	// LOCAL VARIABLES
 	// ---------------
-	SET type 				= 0x02
-	SET weapon_proficiency 	= 0x00
-	SET animation		 	= 0x4134
-	SET lc_weight			= 50
-	SET lc_min_strength		= 12
-	SET enchantment 		= 0
+	SET type 				= 0x02		//TODO:What is this?
+	SET weapon_proficiency 	= 0x00		//TODO:What is this?
+	SET animation		 	= 0x4134	//TODO:What is this?
+	SET lc_weight			= 50		//TODO:What is this?
+	SET lc_min_strength		= 12		//TODO:What is this?
+	SET enchantment 		= 0			//TODO:What is this?
 
 
 	// ITEM PROPERTIES (HEADER)
@@ -180,3 +180,10 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
 BUT_ONLY // End patching: ~!_PLATLC.ITM~
+
+
+// TEST -> DELETE IT!
+COPY ~!_akgear/Items/!_SW1PC0.ITM~ ~override/!_SW1PC0.ITM~
+COPY ~!_akgear/Items/!_SW1PC1.ITM~ ~override/!_SW1PC1.ITM~
+COPY ~!_akgear/Items/!_SW1PC2.ITM~ ~override/!_SW1PC2.ITM~
+COPY ~!_akgear/Items/!_SW1PC3.ITM~ ~override/!_SW1PC3.ITM~
