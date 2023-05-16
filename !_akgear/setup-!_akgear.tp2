@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
 AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.4.7 alpha~
+VERSION ~v0.5.7 alpha~
 
 LANGUAGE
 	~English~	// Language
@@ -10,6 +10,7 @@ LANGUAGE
 	~!_akgear/English/!_setup.tra~
 	~!_akgear/English/!_watodu.tra~
 	~!_akgear/English/!_laofco.tra~
+	~!_akgear/English/!_powcrv.tra~
 	
 LANGUAGE
 	~Deutsch~	// Language
@@ -30,6 +31,10 @@ INCLUDE ~%MOD_FOLDER%/lib/simp_AddItemHeader.tph~
 // -------------------
 CREATE ~ITM~ ~!_SW1HWD~	// "Weave to Dust"
 CREATE ~ITM~ ~!_PLATLC~	// "Layers of Compassion"
+CREATE ~ITM~ ~!_SW1PC0~ // "Power Crave" +0
+CREATE ~ITM~ ~!_SW1PC1~ // "Power Crave" +1
+CREATE ~ITM~ ~!_SW1PC2~ // "Power Crave" +2
+CREATE ~ITM~ ~!_SW1PC3~ // "Power Crave" +3
 
 
 // BAM FILES FOR ALL ITEMS
@@ -45,11 +50,9 @@ OUTER_SET ITM_PRICE 				= 0x0034
 OUTER_SET ITM_WEIGHT				= 0x004c
 OUTER_SET ITM_LORE					= 0x0042
 OUTER_SET ITM_MIN_STRENGTH			= 0x0026
-OUTER_SET ITM_MIN_STRENGTH_BONUS	= 0x0028 // Not sure what this is(Example needed)!
 OUTER_SET ITM_MIN_LEVEL				= 0x0024
 OUTER_SET ITM_MAX_IN_STACK			= 0x0038 
 OUTER_SET ITM_ENCHANTMENT			= 0x0060 
-OUTER_SET ITM_USED_UP_ITEM			= 0x0010
 OUTER_SET ITM_FLAGS					= 0x0018
 OUTER_SET ITM_TYPE					= 0x001c
 OUTER_SET ITM_UNUSABLE_BY			= 0x001e
@@ -71,10 +74,11 @@ OUTER_SET price	 				= 10000
 OUTER_SET weight 				= 4
 OUTER_SET lore 					= 40
 OUTER_SET min_strength 			= 6
-OUTER_SET min_strength_bonus 	= 0 // Don't change value!
 OUTER_SET min_level 			= 4
 OUTER_SET max_in_stack 			= 1
-OUTER_SET used_up_item 			= 0 // Works, but only for 0(None)
+OUTER_SET type 					= 0x14		// E.g. 0x14 = value 20 for category "Large Swords"
+OUTER_SET weapon_proficiency 	= 0x5E		// E.g. Katana
+OUTER_SET animation		 		= 0x3353	// E.g. S3-Katana
 OUTER_SET flags 				= 0b00000000000000000000000001101100
 // Binaries result in item only usable by Wizard Slayer
 OUTER_SET unusable_by			= 0b01100000011111111111011111000000
@@ -94,10 +98,7 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 
 	// LOCAL VARIABLES
 	// ---------------
-	SET type 				= 0x14		//TODO:What is this?
-	SET weapon_proficiency 	= 0x5E		//TODO:What is this?
-	SET animation		 	= 0x3353	//TODO:What is this?
-	SET enchantment 		= 1			//TODO:What is this?
+	SET L_enchantment = 1	
 
 
 	// ITEM PROPERTIES (HEADER)
@@ -116,14 +117,12 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
 	WRITE_SHORT ITM_WEIGHT 				weight 	
 	WRITE_SHORT ITM_LORE 				lore 
-	WRITE_SHORT ITM_USED_UP_ITEM		used_up_item	
 	WRITE_SHORT ITM_TYPE				type
 	WRITE_SHORT ITM_ANIMATION			animation	
 	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
-	WRITE_BYTE 	ITM_MIN_STRENGTH_BONUS 	min_strength_bonus
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
 	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
-	WRITE_BYTE	ITM_ENCHANTMENT	 		enchantment
+	WRITE_BYTE	ITM_ENCHANTMENT	 		L_enchantment
 	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	weapon_proficiency
 	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
@@ -142,12 +141,12 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 
 	// LOCAL VARIABLES
 	// ---------------
-	SET type 				= 0x02		//TODO:What is this?
-	SET weapon_proficiency 	= 0x00		//TODO:What is this?
-	SET animation		 	= 0x4134	//TODO:What is this?
-	SET lc_weight			= 50		//TODO:What is this?
-	SET lc_min_strength		= 12		//TODO:What is this?
-	SET enchantment 		= 0			//TODO:What is this?
+	SET L_type 				= 0x02	// E.g. 0x02 = value 2 for "Armor"
+	SET L_weapon_proficiency= 0x00		
+	SET L_animation		 	= 0x4134// Appearance(e.g armor)
+	SET L_weight			= 50
+	SET L_min_strength		= 12		
+	SET L_enchantment 		= 0			
 
 
 	// ITEM PROPERTIES (HEADER)
@@ -164,17 +163,15 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 	WRITE_LONG 	ITM_PRICE				price
 	WRITE_LONG 	ITM_FLAGS				flags
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
-	WRITE_SHORT ITM_WEIGHT 				lc_weight 	
-	WRITE_SHORT ITM_LORE 				lore 
-	WRITE_SHORT ITM_USED_UP_ITEM		used_up_item	
-	WRITE_SHORT ITM_TYPE				type
-	WRITE_SHORT ITM_ANIMATION			animation	
-	WRITE_BYTE	ITM_MIN_STRENGTH 		lc_min_strength
-	WRITE_BYTE 	ITM_MIN_STRENGTH_BONUS 	min_strength_bonus
+	WRITE_SHORT ITM_WEIGHT 				L_weight 	
+	WRITE_SHORT ITM_LORE 				lore 	
+	WRITE_SHORT ITM_TYPE				L_type
+	WRITE_SHORT ITM_ANIMATION			L_animation	
+	WRITE_BYTE	ITM_MIN_STRENGTH 		L_min_strength
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
 	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
-	WRITE_BYTE	ITM_ENCHANTMENT	 		enchantment
-	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	weapon_proficiency
+	WRITE_BYTE	ITM_ENCHANTMENT	 		L_enchantment
+	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	L_weapon_proficiency
 	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
@@ -182,8 +179,161 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 BUT_ONLY // End patching: ~!_PLATLC.ITM~
 
 
-// TEST -> DELETE IT!
-COPY ~!_akgear/Items/!_SW1PC0.ITM~ ~override/!_SW1PC0.ITM~
-COPY ~!_akgear/Items/!_SW1PC1.ITM~ ~override/!_SW1PC1.ITM~
-COPY ~!_akgear/Items/!_SW1PC2.ITM~ ~override/!_SW1PC2.ITM~
-COPY ~!_akgear/Items/!_SW1PC3.ITM~ ~override/!_SW1PC3.ITM~
+// PATCHING ITEM FILE "Power Crave" +0
+// -----------------------------------
+COPY_EXISTING ~!_SW1PC0.ITM~ override
+	// LOCAL INCLUDES(Content changeable)
+	// ----------------------------------
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave0.tph~
+
+
+	// ITEM PROPERTIES (HEADER)
+	// ------------------------
+	SAY NAME1 				@2 	// Unidentified item name
+	SAY NAME2 				@10 // Identified item name 		
+	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
+	SAY DESC 				@14 // Identified description				
+	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
+	WRITE_ASCII	ITM_VERSION				~V1~		
+	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1PC~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISWPC0~
+	WRITE_LONG 	ITM_PRICE				price
+	WRITE_LONG 	ITM_FLAGS				flags
+	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
+	WRITE_SHORT ITM_WEIGHT 				weight 	
+	WRITE_SHORT ITM_LORE 				lore 
+	WRITE_SHORT ITM_TYPE				type
+	WRITE_SHORT ITM_ANIMATION			animation	
+	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
+	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
+	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
+	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	weapon_proficiency
+	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
+BUT_ONLY // End patching: ~!_SW1PC0.ITM~
+
+
+// PATCHING ITEM FILE "Power Crave" +1
+// -----------------------------------
+COPY_EXISTING ~!_SW1PC1.ITM~ override
+	// LOCAL INCLUDES(Content changeable)
+	// ----------------------------------
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave1.tph~
+
+	// LOCAL VARIABLES
+	// ---------------
+	SET L_enchantment = 1
+
+	// ITEM PROPERTIES (HEADER)
+	// ------------------------
+	SAY NAME1 				@2 	// Unidentified item name
+	SAY NAME2 				@11 // Identified item name 		
+	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
+	SAY DESC 				@14 // Identified description				
+	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
+	WRITE_ASCII	ITM_VERSION				~V1~		
+	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1PC~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISWPC1~
+	WRITE_LONG 	ITM_PRICE				price
+	WRITE_LONG 	ITM_FLAGS				flags
+	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
+	WRITE_SHORT ITM_WEIGHT 				weight 	
+	WRITE_SHORT ITM_LORE 				lore 
+	WRITE_SHORT ITM_TYPE				type
+	WRITE_SHORT ITM_ANIMATION			animation	
+	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
+	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
+	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
+	WRITE_BYTE	ITM_ENCHANTMENT	 		L_enchantment
+	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	weapon_proficiency
+	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
+BUT_ONLY // End patching: ~!_SW1PC1.ITM~
+
+
+// PATCHING ITEM FILE "Power Crave" +2
+// -----------------------------------
+COPY_EXISTING ~!_SW1PC2.ITM~ override
+	// LOCAL INCLUDES(Content changeable)
+	// ----------------------------------
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave2.tph~
+
+	// LOCAL VARIABLES
+	// ---------------
+	SET L_enchantment = 2
+
+	// ITEM PROPERTIES (HEADER)
+	// ------------------------
+	SAY NAME1 				@2 	// Unidentified item name
+	SAY NAME2 				@12 // Identified item name 		
+	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
+	SAY DESC 				@14 // Identified description				
+	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
+	WRITE_ASCII	ITM_VERSION				~V1~		
+	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1PC~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISWPC2~
+	WRITE_LONG 	ITM_PRICE				price
+	WRITE_LONG 	ITM_FLAGS				flags
+	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
+	WRITE_SHORT ITM_WEIGHT 				weight 	
+	WRITE_SHORT ITM_LORE 				lore 
+	WRITE_SHORT ITM_TYPE				type
+	WRITE_SHORT ITM_ANIMATION			animation	
+	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
+	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
+	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
+	WRITE_BYTE	ITM_ENCHANTMENT	 		L_enchantment
+	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	weapon_proficiency
+	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
+BUT_ONLY // End patching: ~!_SW1PC2.ITM~
+
+
+// PATCHING ITEM FILE "Power Crave" +3
+// -----------------------------------
+COPY_EXISTING ~!_SW1PC3.ITM~ override
+	// LOCAL INCLUDES(Content changeable)
+	// ----------------------------------
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave3.tph~
+
+	// LOCAL VARIABLES
+	// ---------------
+	SET L_enchantment = 3
+
+	// ITEM PROPERTIES (HEADER)
+	// ------------------------
+	SAY NAME1 				@2 	// Unidentified item name
+	SAY NAME2 				@12 // Identified item name 		
+	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
+	SAY DESC 				@14 // Identified description				
+	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
+	WRITE_ASCII	ITM_VERSION				~V1~		
+	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1PC~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISWPC3~
+	WRITE_LONG 	ITM_PRICE				price
+	WRITE_LONG 	ITM_FLAGS				flags
+	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
+	WRITE_SHORT ITM_WEIGHT 				weight 	
+	WRITE_SHORT ITM_LORE 				lore 
+	WRITE_SHORT ITM_TYPE				type
+	WRITE_SHORT ITM_ANIMATION			animation	
+	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
+	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
+	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
+	WRITE_BYTE	ITM_ENCHANTMENT	 		L_enchantment
+	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	weapon_proficiency
+	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
+	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
+BUT_ONLY // End patching: ~!_SW1PC3.ITM~

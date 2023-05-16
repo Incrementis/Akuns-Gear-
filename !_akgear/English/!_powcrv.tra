@@ -1,1 +1,30 @@
-@<reference number>=~<Name of the item>~
+// --------------------
+// Identified item name
+// --------------------
+@10=~Power Crave~
+@11=~Power Crave +1~
+@12=~Power Crave +2~
+@13=~Power Crave +3~
+
+// ----------------------
+// Identified description
+// ----------------------
+@14=~TODO: Description
+
+STATISTICS:
+
+Combat abilities:
+- TODO
+
+Restrictions:
+- TODO
+
+THAC0: +0/+1/+2/+3
+Damage: 1d10 /+0/+1/+2/+3 (slashing)
+Speed Factor: 3
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
