@@ -27,15 +27,15 @@ Weight: 6~
 // ----------------------
 // Identified description
 // ----------------------
-@5=~This enchanted katana is called Weave to Dust. Its name comes from its ability to dispel any wards, a caster has cast on himself, with one successful hit. It's actually part of a set of Wizard Slayer gear. On closer inspection, it becomes clear that this sword, with its numerous gemstones on the hilt, is not a classic Kara-Tur katana. It was forged in Calimshan by an unknown blacksmith. The idea behind this sword is to combine a near-perfect battle sword with the stunning aesthetics of the Calimshan Forge. The customer who commissioned this sword from the unknown smith is himself known as Akun Zaran, a Wizard Slayer.
+@5=~This enchanted katana is called "Weave to Dust". Its name comes from its ability to dispel any wards a caster has cast on themselves with one successful hit. It's actually part of a set of Wizard Slayer gear. On closer inspection, it becomes clear that this sword with its jeweled hilt is not a classic Kara-Tur katana. It was forged in Calimshan by an unknown blacksmith. This blacksmith infused the gem with the magic that gives the unusual weapon its magical properties. It is clear that the design idea behind this katana is to combine a near-perfect battle sword with the stunning aesthetic of the Calimshan Forge. Further inspection reveals that the magic in this item seems to be somehow incomplete. The customer who commissioned this unusual sword from the unknown smith, is himself known as Akun Zaran, a halfling Wizard Slayer.
 
 STATISTICS:
 
 Combat abilities:
-- 20% chance to cast „Dispel Effects“ on its target after a successful hit.
+- 15% chance to cast "Dispel Effects" on its target after a successful hit.
 
 Restrictions:
-- Character needs level 4 to equip „Weave to Dust“
+- Character needs level 4 to equip "Weave to Dust"
 - Wizard Slayer only
 
 THAC0: +1
@@ -46,4 +46,4 @@ Type: One-handed
 Requires:
  6 Strength
 
-Weight: 4~
+Weight: 5~

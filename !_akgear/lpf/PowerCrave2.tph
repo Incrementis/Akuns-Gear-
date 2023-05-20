@@ -5,7 +5,7 @@ LPF ADD_ITEM_EQEFFECT
 	INT_VAR
 		opcode 		= 7	// Set color
 		target		= 1	// Self
-		parameter1 	= 5	// Medium Silver
+		parameter1 	= 70// Light Metallic Red
 		parameter2 	= 21// Head/blade minor
 		timing 		= 2	// Instant/While equipped
 END
@@ -15,8 +15,8 @@ LPF ADD_ITEM_EQEFFECT
 	INT_VAR
 		opcode 		= 7	// Set color
 		target		= 1	// Self
-		parameter1 	= 25// Dark Pure Gold
-		parameter2 	= 16// Grip/staff minor
+		parameter1 	= 47// Pure Dark Red
+		parameter2 	= 16// Head/blade/staff major
 		timing 		= 2	// Instant/While equipped
 END
 // EQ GRIP COLOR
@@ -25,9 +25,19 @@ LPF ADD_ITEM_EQEFFECT
 	INT_VAR
 		opcode 		= 7	// Set color
 		target		= 1	// Self
-		parameter1 	= 33// Chrome Magenta
+		parameter1 	= 62// Dark Lavender
 		parameter2 	= 20// Grip/staff minor
 		timing 		= 2	// Instant/While equipped
+END
+// EQ BELT GLOW
+// ------------
+LPF ADD_ITEM_EQEFFECT
+	INT_VAR
+		opcode 		= 9	// Set color glow pulse
+		target		= 1	// Self
+		parameter1 = ((150 << 8) + (0 << 16) + (0 << 24)) 	// ((red << 8) + (green << 16) + (blue << 24))
+		parameter2 	= 21 + (50 << 16) 						// Head/blade/staff major and Cycle speed...(Location + (Cycle speed << 16))
+		timing 		= 2	 // Instant/While equipped
 END
 // NEW ITEM HEADER (MACRO/LIB)
 // ---------------------------

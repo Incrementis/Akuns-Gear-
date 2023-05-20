@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
 AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.5.7 alpha~
+VERSION ~v0.6.10 alpha~
 
 LANGUAGE
 	~English~	// Language
@@ -70,17 +70,18 @@ OUTER_SET ITM_NUMBER_OF_ABILITIES	= 0x0068
 
 // GLOBAL VARIABLES (Changable)
 // ----------------------------	
-OUTER_SET price	 				= 10000
-OUTER_SET weight 				= 4
-OUTER_SET lore 					= 40
+OUTER_SET price	 				= 7500
+OUTER_SET weight 				= 5
+OUTER_SET lore 					= 45
 OUTER_SET min_strength 			= 6
 OUTER_SET min_level 			= 4
 OUTER_SET max_in_stack 			= 1
 OUTER_SET type 					= 0x14		// E.g. 0x14 = value 20 for category "Large Swords"
 OUTER_SET weapon_proficiency 	= 0x5E		// E.g. Katana
 OUTER_SET animation		 		= 0x3353	// E.g. S3-Katana
+// Binaries result in "Droppable", "Displayable", "Not copyable", "Magical"
 OUTER_SET flags 				= 0b00000000000000000000000001101100
-// Binaries result in item only usable by Wizard Slayer
+// Next five variables result in item only usable by Wizard Slayer
 OUTER_SET unusable_by			= 0b01100000011111111111011111000000
 OUTER_SET unusable_kit1			= 0b11111111
 OUTER_SET unusable_kit2			= 0b11111111
@@ -95,11 +96,9 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 	// ----------------------------------
 	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/WeaveToDust.tph~
 
-
 	// LOCAL VARIABLES
 	// ---------------
 	SET L_enchantment = 1	
-
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
@@ -138,16 +137,12 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 	// ----------------------------------
 	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/LayersOfCompassion.tph~
 
-
 	// LOCAL VARIABLES
 	// ---------------
 	SET L_type 				= 0x02	// E.g. 0x02 = value 2 for "Armor"
-	SET L_weapon_proficiency= 0x00		
 	SET L_animation		 	= 0x4134// Appearance(e.g armor)
-	SET L_weight			= 50
-	SET L_min_strength		= 12		
-	SET L_enchantment 		= 0			
-
+	SET L_weight			= 40
+	SET L_min_strength		= 12				
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
@@ -170,8 +165,6 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 	WRITE_BYTE	ITM_MIN_STRENGTH 		L_min_strength
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
 	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
-	WRITE_BYTE	ITM_ENCHANTMENT	 		L_enchantment
-	WRITE_BYTE	ITM_WEAPON_PROFICIENCY	L_weapon_proficiency
 	WRITE_BYTE 	ITM_UNUSABLE_KIT1		unusable_kit1	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT2		unusable_kit2	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
@@ -185,7 +178,6 @@ COPY_EXISTING ~!_SW1PC0.ITM~ override
 	// LOCAL INCLUDES(Content changeable)
 	// ----------------------------------
 	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave0.tph~
-
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
@@ -307,12 +299,13 @@ COPY_EXISTING ~!_SW1PC3.ITM~ override
 
 	// LOCAL VARIABLES
 	// ---------------
-	SET L_enchantment = 3
+	SET L_enchantment 	= 3
+	SET L_animation		= 0x5346 // Falming sword
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
 	SAY NAME1 				@2 	// Unidentified item name
-	SAY NAME2 				@12 // Identified item name 		
+	SAY NAME2 				@13 // Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
 	SAY DESC 				@14 // Identified description				
 	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
@@ -326,7 +319,7 @@ COPY_EXISTING ~!_SW1PC3.ITM~ override
 	WRITE_SHORT ITM_WEIGHT 				weight 	
 	WRITE_SHORT ITM_LORE 				lore 
 	WRITE_SHORT ITM_TYPE				type
-	WRITE_SHORT ITM_ANIMATION			animation	
+	WRITE_SHORT ITM_ANIMATION			L_animation	
 	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
 	WRITE_BYTE	ITM_MAX_IN_STACK	 	max_in_stack
@@ -337,3 +330,12 @@ COPY_EXISTING ~!_SW1PC3.ITM~ override
 	WRITE_BYTE 	ITM_UNUSABLE_KIT3		unusable_kit3	
 	WRITE_BYTE 	ITM_UNUSABLE_KIT4		unusable_kit4
 BUT_ONLY // End patching: ~!_SW1PC3.ITM~
+
+
+// PATCHING STORE FILE "Erdane"(near outside Durlag's Tower)
+// ---------------------------------------------------------
+COPY_EXISTING ~ERDANE.STO~ ~override~
+	// LOCAL INCLUDES(Content changeable)
+	// ----------------------------------
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/ErdanesShop.tph~	
+BUT_ONLY // End patching: ~ERDANE.STO~

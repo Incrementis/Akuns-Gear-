@@ -5,7 +5,7 @@ LPF ADD_ITEM_EQEFFECT
 	INT_VAR
 		opcode 		= 7	// Set color
 		target		= 1	// Self
-		parameter1 	= 5	// Medium Silver
+		parameter1 	= 97// Light Mint Blue
 		parameter2 	= 21// Head/blade minor
 		timing 		= 2	// Instant/While equipped
 END
@@ -15,8 +15,8 @@ LPF ADD_ITEM_EQEFFECT
 	INT_VAR
 		opcode 		= 7	// Set color
 		target		= 1	// Self
-		parameter1 	= 25// Dark Pure Gold
-		parameter2 	= 16// Grip/staff minor
+		parameter1 	= 47// Pure Dark Red
+		parameter2 	= 16// Head/blade/staff major
 		timing 		= 2	// Instant/While equipped
 END
 // EQ GRIP COLOR
@@ -25,7 +25,7 @@ LPF ADD_ITEM_EQEFFECT
 	INT_VAR
 		opcode 		= 7	// Set color
 		target		= 1	// Self
-		parameter1 	= 33// Chrome Magenta
+		parameter1 	= 62// Dark Lavender
 		parameter2 	= 20// Grip/staff minor
 		timing 		= 2	// Instant/While equipped
 END
