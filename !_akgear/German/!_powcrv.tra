@@ -1,1 +1,12 @@
-@<reference number>=~<Name of the item>~
+// --------------------
+// Identified item name
+// --------------------
+@10=~TODO~
+@11=~TODO~
+@12=~TODO~
+@13=~TODO~
+
+// ----------------------
+// Identified description
+// ----------------------
+@14=~TODO~

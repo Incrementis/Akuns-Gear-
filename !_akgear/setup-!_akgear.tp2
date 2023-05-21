@@ -1,12 +1,11 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~!_akgear/Backup~
-AUTHOR 	~Incrementis (incrementis@gmail.com)~
-VERSION ~v0.6.10 alpha~
+AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
+VERSION ~v0.6.11 beta~
 
 LANGUAGE
 	~English~	// Language
 	~English~	// Directory
-	//TODO: include tra files
 	~!_akgear/English/!_setup.tra~
 	~!_akgear/English/!_watodu.tra~
 	~!_akgear/English/!_laofco.tra~
@@ -15,7 +14,10 @@ LANGUAGE
 LANGUAGE
 	~Deutsch~	// Language
 	~German~	// Directory
-	//TODO: include tra files
+	~!_akgear/German/!_setup.tra~
+	~!_akgear/German/!_watodu.tra~
+	~!_akgear/German/!_laofco.tra~
+	~!_akgear/German/!_powcrv.tra~
 
 
 // -------------------------
@@ -337,5 +339,5 @@ BUT_ONLY // End patching: ~!_SW1PC3.ITM~
 COPY_EXISTING ~ERDANE.STO~ ~override~
 	// LOCAL INCLUDES(Content changeable)
 	// ----------------------------------
-	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/ErdanesShop.tph~	
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/StoreAllItems.tph~	
 BUT_ONLY // End patching: ~ERDANE.STO~
