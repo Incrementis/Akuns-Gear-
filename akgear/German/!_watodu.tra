@@ -1,0 +1,47 @@
+// ----------------------
+// Unidentified item name
+// ----------------------
+@2=~Katana~
+
+// --------------------
+// Identified item name
+// --------------------
+@3=~Magie zu Staub~
+
+// ------------------------
+// Unidentified description
+// ------------------------
+@4=~Das Katana ist ein Schwert, dessen Klinge nur auf einer Seite scharf ist. Es ist leicht gekrümmt und endet in einer Spitze, die an die Spitze eines Meißels erinnert. Das Katana stellt vermutlich die aufwändigste Form des Schwertes dar. Seine Fertigung ist ein langer, aufwändiger und höchst geheimer Vorgang, den man schon fast als Kunstwerk bezeichnen müsste. Diese Schwerter spielen in der Kultur von Kara-Tur eine wichtige Rolle. Wenn man es wagt, das Katana eines Samurais zu berühren oder gar zu ziehen, beleidigt man den Samurai, dem es gehört, und zieht seinen Zorn auf sich. Es kommt nur äußerst selten vor, dass ein Gaijin, ein Fremder, in den Besitz einer derartigen Waffe kommt. Entweder handelt es sich bei diesem Gaijin dann um den geehrten Freund eines wichtigen Ministers oder um den Mörder eines Samurais.
+
+EIGENSCHAFTEN:
+
+Schaden: 1W10 (Klinge)
+Initiativefaktor: 4
+Fertigkeit: Katana
+Typ: 1-händig
+Mindeststärke: 6
+
+Gewicht: 6~
+
+// ----------------------
+// Identified description
+// ----------------------
+@5=~Dieses verzauberte Katana heißt „Magie zu Staub“. Sein Name kommt von seiner Fähigkeit, alle Schutzzauber, die ein Zaubernder auf sich selbst gewirkt hat, mit einem erfolgreichen Treffer zu bannen. Es ist eigentlich Teil einer Magiertöter-Ausrüstung. Bei näherer Betrachtung wird deutlich, dass es sich bei diesem Schwert mit juwelenbesetztem Griff nicht um ein klassisches Kara-Tur-Katana handelt. Es wurde in Calimshan von einem unbekannten Schmied hergestellt. Dieser Schmied erfüllte den Edelstein mit der Magie, die der ungewöhnlichen Waffe ihre magischen Eigenschaften verleiht. Es ist klar, dass die Designidee hinter diesem Katana darin besteht, ein nahezu perfektes Kampfschwert mit der atemberaubenden Ästhetik der Calimshan-Schmiede zu kombinieren. Eine weitere Untersuchung zeigt, dass die Magie in diesem Gegenstand irgendwie unvollständig zu sein scheint. Der Kunde, der dieses ungewöhnliche Schwert bei dem unbekannten Schmied in Auftrag gab, ist selbst als Akun Zaran bekannt, ein Halbling-Magiertöter.
+
+EIGENSCHAFTEN:
+
+Waffenfähigkeiten:
+- 20% Chance, nach einem erfolgreichen Treffer „Magie bannen“ auf das Ziel zu wirken.
+
+Voraussetzungen:
+- Der Charakter benötigt Level 4, um „Magie zu Staub“ auszurüsten.
+- Kann nur von Magiertöter ausgerüstet werden
+
+ETW0-Bonus: +1
+Schaden: 1d10+1 (slashing)
+Initiativefaktor: 3
+Fertigkeit: Katana
+Typ: 1-händig
+Mindeststärke: 6
+
+Gewicht: 5~
