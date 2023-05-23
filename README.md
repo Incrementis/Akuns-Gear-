@@ -56,7 +56,7 @@ The changes per power level are visible on the equipped character.
 - +3 turns the blade in the outfitter's hand into flames
 
 # More Information
-For more detailed information, please visit this projects wiki.
+For more detailed information, please visit this [projects wiki](https://github.com/Incrementis/Akuns-Gear-/wiki).
 
 ![Halfling GIF](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/AnimatedImages/AkunsGear.gif)
 
