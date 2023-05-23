@@ -5,6 +5,11 @@ All items are only equippable for the Wizard Slayer fighter subclass at level 4.
 The items can be bought from the merchant Erdane in the Durlags Tower area(outside of Durlags Tower). The trader sells the items
 directly from his stock (no dialogue options). Regular price is thousands of gold per item.
 
+This mod is fanfiction.
+
+# Supported Games
+* BG:EE (Baldur's Gate:Enhanced Edition)
+
 # Languages
 * English
 * Deutsch
@@ -16,16 +21,52 @@ directly from his stock (no dialogue options). Regular price is thousands of gol
 4. Copy the folder "*akgear*" and the file "*Setup-akgear.exe*" and paste them into your Baldur's Gate Enhanced Edition game folder.
 5. Start "*Setup-akgear.exe*" and select the installation language.
 
+# Content
+## Armor "*Layers of Compassion*":
+
+![Power Crave 3](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Layers_of_Compassion.png)
+
+  - 25% resistance to fire, cold, electricity, poison, acid and magical damage
+
+## Katana "*Weave to Dust*":
+
+![Weave to Dust image](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Weave_to_Dust.png)
+
+  - 20% chance to cast „*Dispel Magic*“ on its target after a successful hit
+
+## Katana "*Power Crave*":
+
+![Power Crave 0](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave.png)
+![Power Crave 1](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B1.png)
+![Power Crave 2](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B2.png)
+![Power Crave 3](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B3.png)
+
+  - Recommended as a main hand weapon
+  - Increases the off-hands chance to hit as if it were equipped with the main hand while the weapon
+is charged
+  - Increases its magic level by +1 with each hit, up to a maximum of +3
+  - +1 gives the wielder one chance to hit to increase to +2 for 1 rounds
+  - +2 gives the wielder a chance of two hits, increasing to +3 for 2 rounds
+  - +3 allows the wielder three attacks for 2 rounds, after which the sword reverts to its non-magical
+state
+
+The changes per power level are visible on the equipped character.
+- +1 changes the blade to a bluish color
+- +2 turns the blade red and glows in the outfitter's hand
+- +3 turns the blade in the outfitter's hand into flames
+
+# More Information
+For more detailed information, please visit this projects wiki.
+
+![Halfling GIF](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/AnimatedImages/AkunsGear.gif)
+
 # Special Thanks
-Thanks to ["the Gibberling 3"](https://www.gibberlings3.net/forums/) forum users who helped me with hints and information:
+Thanks to ["The Gibberling 3"](https://www.gibberlings3.net/forums/) forum users who helped me with hints and information:
 * CamDawg
 * Graion Dilach
 * jmerry
 * subtledoctor
 * kjeron
-
-# More Information
-For more detailed information, please visit this projects wiki.
 
 # Copyright
 The "*AkunsGear*" Project is not developed, supported, or endorsed by BioWare™, Interplay/BlackIsle, Beamdog, or Wizards of the Coast.
