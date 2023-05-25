@@ -1,23 +1,23 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~akgear/Backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.0.2~
+VERSION ~v1.0.3~
 
 LANGUAGE
 	~English~	// Language
 	~English~	// Directory
-	~%MOD_FOLDER%/English/!_setup.tra~
-	~%MOD_FOLDER%/English/!_watodu.tra~
-	~%MOD_FOLDER%/English/!_laofco.tra~
-	~%MOD_FOLDER%/English/!_powcrv.tra~
+	~akgear/English/!_setup.tra~
+	~akgear/English/!_watodu.tra~
+	~akgear/English/!_laofco.tra~
+	~akgear/English/!_powcrv.tra~
 	
 LANGUAGE
 	~Deutsch~	// Language
 	~German~	// Directory
-	~%MOD_FOLDER%/German/!_setup.tra~
-	~%MOD_FOLDER%/German/!_watodu.tra~
-	~%MOD_FOLDER%/German/!_laofco.tra~
-	~%MOD_FOLDER%/German/!_powcrv.tra~
+	~akgear/German/!_setup.tra~
+	~akgear/German/!_watodu.tra~
+	~akgear/German/!_laofco.tra~
+	~akgear/German/!_powcrv.tra~
 
 
 // -------------------------
