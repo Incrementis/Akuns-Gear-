@@ -29,7 +29,7 @@ Here is a solution:
 	1. SOD needs to be installed as BG:EE DLC 
 	2. and after that [DLCmerger](https://github.com/Argent77/A7-DlcMerger/releases) needs to be installed.
 
-Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fast_installation_of_DLCmergerEN.pdf) Win64 installation guide for modmerge, but possibly the [official](https://github.com/ScottBrooks/modmerge) installation guide is recommended.
+Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fast_installation_of_DLCmergerEN.pdf) Win64 installation guide for modmerge, but possibly the [official](https://github.com/Argent77/A7-DlcMerger) installation guide is recommended.
 
 # Content
 ## Armor "*Layers of Compassion*":
