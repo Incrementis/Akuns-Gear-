@@ -27,9 +27,9 @@ Here is a solution:
 
 * Before "Akun's Gear" is installed(If it is already installed, uninstall it before installing SOD by launching "*Setup-akgear.exe*".):
 	1. SOD needs to be installed as BG:EE DLC 
-	2. and after that [modmerge](https://github.com/ScottBrooks/modmerge/releases) needs to be installed.
+	2. and after that [DLCmerger](https://github.com/Argent77/A7-DlcMerger/releases) needs to be installed.
 
-Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fast_installation_of_modmergeEN.pdf) installation guide for modmerge, but possibly the [official](https://github.com/ScottBrooks/modmerge) installation guide is recommended.
+Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fast_installation_of_DLCmergerEN.pdf) Win64 installation guide for modmerge, but possibly the [official](https://github.com/ScottBrooks/modmerge) installation guide is recommended.
 
 # Content
 ## Armor "*Layers of Compassion*":
@@ -78,6 +78,8 @@ Thanks to ["The Gibberling 3"](https://www.gibberlings3.net/forums/) forum users
 * subtledoctor
 * kjeron
 * AL|EN
+* Endarire
+* Jastey
 
 # Copyright
 The "*AkunsGear*" Project is not developed, supported, or endorsed by BioWare™, Interplay/BlackIsle, Beamdog, or Wizards of the Coast.
