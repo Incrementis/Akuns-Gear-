@@ -9,6 +9,11 @@ This mod is fanfiction.
 
 # Supported Games
 * BG:EE (Baldur's Gate:Enhanced Edition)
+* SOD (Siege of Dragonspear)
+	* Before "Akun's Gear" is installed:
+		1. SOD needs to be installed as BG:EE DLC 
+		2. and after that [modmerge](https://github.com/ScottBrooks/modmerge/releases) needs to be installed.
+	* Here is my [fast](#) installation guide for modmerge, but possibly the [official](https://github.com/ScottBrooks/modmerge) installation guide is recommended.
 
 # Languages
 * English
