@@ -8,12 +8,7 @@ directly from his stock (no dialogue options). Regular price is thousands of gol
 This mod is fanfiction.
 
 # Supported Games
-* BG:EE (Baldur's Gate:Enhanced Edition)
-* SOD (Siege of Dragonspear)
-	* Before "Akun's Gear" is installed:
-		1. SOD needs to be installed as BG:EE DLC 
-		2. and after that [modmerge](https://github.com/ScottBrooks/modmerge/releases) needs to be installed.
-	* Here is my [fast](#) installation guide for modmerge, but possibly the [official](https://github.com/ScottBrooks/modmerge) installation guide is recommended.
+* BG:EE (Baldur's Gate:Enhanced Edition) 
 
 # Languages
 * English
@@ -25,6 +20,16 @@ This mod is fanfiction.
 3. Navigate into the unzipped folder until you see the "*akgear*" folder.
 4. Copy the folder "*akgear*" and the file "*Setup-akgear.exe*" and paste them into your Baldur's Gate Enhanced Edition game folder.
 5. Start "*Setup-akgear.exe*" and select the installation language.
+
+# Troubleshooting
+## There are known issues when installing SOD as DLC for BG:EE
+Here is a solution:
+
+* Before "Akun's Gear" is installed(If it is already installed, uninstall it before installing SOD by launching "*Setup-akgear.exe*".):
+	1. SOD needs to be installed as BG:EE DLC 
+	2. and after that [modmerge](https://github.com/ScottBrooks/modmerge/releases) needs to be installed.
+
+Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fast_installation_of_modmergeEN.pdf) installation guide for modmerge, but possibly the [official](https://github.com/ScottBrooks/modmerge) installation guide is recommended.
 
 # Content
 ## Armor "*Layers of Compassion*":
