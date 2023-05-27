@@ -80,6 +80,7 @@ Thanks to ["The Gibberling 3"](https://www.gibberlings3.net/forums/) forum users
 * AL|EN
 * Endarire
 * Jastey
+* argent77
 
 # Copyright
 The "*AkunsGear*" Project is not developed, supported, or endorsed by BioWare™, Interplay/BlackIsle, Beamdog, or Wizards of the Coast.
