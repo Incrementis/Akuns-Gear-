@@ -1,7 +1,8 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~akgear/Backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.0.5~
+VERSION ~v1.1.6~
+AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
 LANGUAGE
 	~English~	// Language
@@ -19,7 +20,6 @@ LANGUAGE
 	~akgear/German/!_laofco.tra~
 	~akgear/German/!_powcrv.tra~
 
-
 // -------------------------
 // Install "Akun's Gear" Mod
 // -------------------------
@@ -27,7 +27,7 @@ BEGIN @1
 // GLOBAL INCLUDES(Don't touch this!)
 // ----------------------------------
 INCLUDE ~%MOD_FOLDER%/lib/simp_AddItemHeader.tph~
-
+INCLUDE ~%MOD_FOLDER%/lib/warnings.tph~
 
 // CREATING ITEM FILES
 // -------------------
@@ -72,6 +72,8 @@ OUTER_SET ITM_NUMBER_OF_ABILITIES	= 0x0068
 
 // GLOBAL VARIABLES (Changable)
 // ----------------------------	
+OUTER_SPRINT signature 			 ~ITM~
+OUTER_SPRINT version 			 ~V1~	
 OUTER_SET price	 				= 5000
 OUTER_SET weight 				= 5
 OUTER_SET lore 					= 45
@@ -100,7 +102,10 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 
 	// LOCAL VARIABLES
 	// ---------------
-	SET L_enchantment = 1	
+	SET L_enchantment = 1
+	SPRINT L_ground_icon 		~GSW1H01~				
+	SPRINT L_description_image 	~!_CSW1WD~
+	SPRINT L_inventory_icon 	~!_ISW1WD~	
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
@@ -108,11 +113,11 @@ COPY_EXISTING ~!_SW1HWD.ITM~ override
 	SAY NAME2 				@3 	// Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
 	SAY DESC 				@5 	// Identified description				
-	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
-	WRITE_ASCII	ITM_VERSION				~V1~		
-	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
-	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1WD~		
-	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISW1WD~
+	WRITE_ASCII	ITM_SIGNATURE			~%signature%~
+	WRITE_ASCII	ITM_VERSION				~%version%~		
+	WRITE_ASCII	ITM_GROUND_ICON			~%L_ground_icon%~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~%L_description_image%~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~%L_inventory_icon%~
 	WRITE_LONG 	ITM_PRICE				price
 	WRITE_LONG 	ITM_FLAGS				flags
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
@@ -144,7 +149,10 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 	SET L_type 				= 0x02	// E.g. 0x02 = value 2 for "Armor"
 	SET L_animation		 	= 0x4134// Appearance(e.g armor)
 	SET L_weight			= 40
-	SET L_min_strength		= 12				
+	SET L_min_strength		= 12
+	SPRINT L_ground_icon 		~GPLAT01~				
+	SPRINT L_description_image 	~!_CPLTLC~
+	SPRINT L_inventory_icon 	~!_IPLTLC~
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
@@ -152,11 +160,11 @@ COPY_EXISTING ~!_PLATLC.ITM~ override
 	SAY NAME2 				@7 	// Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@8 	// Unidentified description	
 	SAY DESC 				@9 	// Identified description				
-	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
-	WRITE_ASCII	ITM_VERSION				~V1~		
-	WRITE_ASCII	ITM_GROUND_ICON			~GPLAT01~		
-	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CPLTLC~		
-	WRITE_ASCII	ITM_INVENTORY_ICON		~!_IPLTLC~
+	WRITE_ASCII	ITM_SIGNATURE			~%signature%~		
+	WRITE_ASCII	ITM_VERSION				~%version%~		
+	WRITE_ASCII	ITM_GROUND_ICON			~%L_ground_icon%~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~%L_description_image%~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~%L_inventory_icon%~
 	WRITE_LONG 	ITM_PRICE				price
 	WRITE_LONG 	ITM_FLAGS				flags
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
@@ -181,17 +189,23 @@ COPY_EXISTING ~!_SW1PC0.ITM~ override
 	// ----------------------------------
 	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave0.tph~
 
+	// LOCAL VARIABLES
+	// ---------------
+	SPRINT L_ground_icon 		~GSW1H01~				
+	SPRINT L_description_image 	~!_CSW1PC~
+	SPRINT L_inventory_icon 	~!_ISWPC0~
+
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
 	SAY NAME1 				@2 	// Unidentified item name
 	SAY NAME2 				@10 // Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
 	SAY DESC 				@14 // Identified description				
-	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
-	WRITE_ASCII	ITM_VERSION				~V1~		
-	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
-	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1PC~		
-	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISWPC0~
+	WRITE_ASCII	ITM_SIGNATURE			~%signature%~			
+	WRITE_ASCII	ITM_VERSION				~%version%~		
+	WRITE_ASCII	ITM_GROUND_ICON			~%L_ground_icon%~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~%L_description_image%~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~%L_inventory_icon%~
 	WRITE_LONG 	ITM_PRICE				price
 	WRITE_LONG 	ITM_FLAGS				flags
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
@@ -220,6 +234,9 @@ COPY_EXISTING ~!_SW1PC1.ITM~ override
 	// LOCAL VARIABLES
 	// ---------------
 	SET L_enchantment = 1
+	SPRINT L_ground_icon 		~GSW1H01~				
+	SPRINT L_description_image 	~!_CSW1PC~
+	SPRINT L_inventory_icon 	~!_ISWPC1~
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
@@ -227,11 +244,11 @@ COPY_EXISTING ~!_SW1PC1.ITM~ override
 	SAY NAME2 				@11 // Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
 	SAY DESC 				@14 // Identified description				
-	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
-	WRITE_ASCII	ITM_VERSION				~V1~		
-	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
-	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1PC~		
-	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISWPC1~
+	WRITE_ASCII	ITM_SIGNATURE			~%signature%~			
+	WRITE_ASCII	ITM_VERSION				~%version%~		
+	WRITE_ASCII	ITM_GROUND_ICON			~%L_ground_icon%~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~%L_description_image%~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~%L_inventory_icon%~
 	WRITE_LONG 	ITM_PRICE				price
 	WRITE_LONG 	ITM_FLAGS				flags
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
@@ -261,6 +278,9 @@ COPY_EXISTING ~!_SW1PC2.ITM~ override
 	// LOCAL VARIABLES
 	// ---------------
 	SET L_enchantment = 2
+	SPRINT L_ground_icon 		~GSW1H01~				
+	SPRINT L_description_image 	~!_CSW1PC~
+	SPRINT L_inventory_icon 	~!_ISWPC2~
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
@@ -268,11 +288,11 @@ COPY_EXISTING ~!_SW1PC2.ITM~ override
 	SAY NAME2 				@12 // Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
 	SAY DESC 				@14 // Identified description				
-	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
-	WRITE_ASCII	ITM_VERSION				~V1~		
-	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
-	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1PC~		
-	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISWPC2~
+	WRITE_ASCII	ITM_SIGNATURE			~%signature%~			
+	WRITE_ASCII	ITM_VERSION				~%version%~		
+	WRITE_ASCII	ITM_GROUND_ICON			~%L_ground_icon%~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~%L_description_image%~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~%L_inventory_icon%~
 	WRITE_LONG 	ITM_PRICE				price
 	WRITE_LONG 	ITM_FLAGS				flags
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
@@ -302,7 +322,10 @@ COPY_EXISTING ~!_SW1PC3.ITM~ override
 	// LOCAL VARIABLES
 	// ---------------
 	SET L_enchantment 	= 3
-	SET L_animation		= 0x5346 // Falming sword
+	SET L_animation		= 0x5346 // Flaming sword
+	SPRINT L_ground_icon 		~GSW1H01~				
+	SPRINT L_description_image 	~!_CSW1PC~
+	SPRINT L_inventory_icon 	~!_ISWPC3~
 
 	// ITEM PROPERTIES (HEADER)
 	// ------------------------
@@ -310,11 +333,11 @@ COPY_EXISTING ~!_SW1PC3.ITM~ override
 	SAY NAME2 				@13 // Identified item name 		
 	SAY UNIDENTIFIED_DESC 	@4 	// Unidentified description	
 	SAY DESC 				@14 // Identified description				
-	WRITE_ASCII	ITM_SIGNATURE			~ITM~			
-	WRITE_ASCII	ITM_VERSION				~V1~		
-	WRITE_ASCII	ITM_GROUND_ICON			~GSW1H01~		
-	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~!_CSW1PC~		
-	WRITE_ASCII	ITM_INVENTORY_ICON		~!_ISWPC3~
+	WRITE_ASCII	ITM_SIGNATURE			~%signature%~			
+	WRITE_ASCII	ITM_VERSION				~%version%~		
+	WRITE_ASCII	ITM_GROUND_ICON			~%L_ground_icon%~		
+	WRITE_ASCII	ITM_DESCRIPTION_IMAGE	~%L_description_image%~		
+	WRITE_ASCII	ITM_INVENTORY_ICON		~%L_inventory_icon%~
 	WRITE_LONG 	ITM_PRICE				price
 	WRITE_LONG 	ITM_FLAGS				flags
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
@@ -341,3 +364,8 @@ COPY_EXISTING ~ERDANE.STO~ ~override~
 	// ----------------------------------
 	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/StoreAllItems.tph~	
 BUT_ONLY // End patching: ~ERDANE.STO~
+
+
+// FOOTER INCLUDES
+// ---------------
+INCLUDE ~%MOD_FOLDER%/lpa/CheckSOD.tph~
