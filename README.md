@@ -10,6 +10,9 @@ This mod is fanfiction.
 # Supported Games
 * BG:EE (Baldur's Gate:Enhanced Edition) 
 
+# Compatibility
+* Installed SOD (Siege of Dragonspear) as DLC for BG:EE (see "Troubleshooting" here in readame to get things right)
+
 # Languages
 * English
 * Deutsch
@@ -71,7 +74,7 @@ For more detailed information, please visit this [projects wiki](https://github.
 ![Halfling GIF](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/AnimatedImages/AkunsGear.gif)
 
 # Special Thanks
-Thanks to ["The Gibberling 3"](https://www.gibberlings3.net/forums/) forum users who helped me with hints and information:
+Thanks to ["The Gibberlings 3"](https://www.gibberlings3.net/forums/) forum users who helped me with hints and information:
 * CamDawg
 * Graion Dilach
 * jmerry
@@ -81,6 +84,8 @@ Thanks to ["The Gibberling 3"](https://www.gibberlings3.net/forums/) forum users
 * Endarire
 * Jastey
 * argent77
+* Bubb
+* suy
 
 # Copyright
 The "*AkunsGear*" Project is not developed, supported, or endorsed by BioWare™, Interplay/BlackIsle, Beamdog, or Wizards of the Coast.
