@@ -16,15 +16,15 @@ BEGIN
 END
 
 
-OUTER_SPRINT warning ~ENGLISH: Insecure game compatibility detected! No guarantee for smooth functionality in case of successful installation. If you encounter an error during installation, this may be the cause.
+OUTER_SPRINT warning ~ENGLISH: Insecure game compatibility detected! No guarantee for smooth functionality in case of successful installation. If you encounter an error after installation, this may be the cause.
 
-DEUTSCH: Modifikations-kompatibilität ist unsicher. Trotz erfolgreicher Installation, kann die reibungslose Funktionalität nicht garantiert werden. Falls die Installation Fehler generiert, kann die Kompatibilität eine Ursache sein.~ 
+DEUTSCH: Modifikations-kompatibilität ist unsicher. Trotz erfolgreicher Installation, kann die reibungslose Funktionalität nicht garantiert werden. Falls die Installation Fehler generiert, kann die Kompatibilität eine der Ursachen sein.~ 
 
 
-// Checks all files
+// Checks all game shortcuts
 OUTER_FOR (index = 0; VARIABLE_IS_SET $games_insecure_compatibility(~%index%~); ++index) BEGIN
 
-	// Gets specific file
+	// Gets specific game shortcut
 	OUTER_TEXT_SPRINT game $games_insecure_compatibility(~%index%~)
 
 	// Calls warning 

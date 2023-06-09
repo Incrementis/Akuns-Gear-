@@ -10,7 +10,7 @@ BEGIN
 	~tob~
 	~iwd2~
 	~pst~
-	~iwd~
+	~iwd1~
 	~bg2ee~
 	~iwdee~
 	~pstee~
@@ -22,13 +22,13 @@ OUTER_SPRINT error ~ENGLISH: Mod is incompatible with game! The Installation is 
 DEUTSCH: Diese Modifikation is nicht mit dem zu installierenden Spiel kompatibel! Die Installation wird abgebrochen.~ 
 
 
-// Checks all files
+// Checks all game shortcuts
 OUTER_FOR (index = 0; VARIABLE_IS_SET $games_incompatible(~%index%~); ++index) BEGIN
 
-	// Gets specific file
+	// Gets specific game shortcut
 	OUTER_TEXT_SPRINT game $games_incompatible(~%index%~)
 
-	// Calls warning 
+	// Calls error 
 	LAF ERR_EVALUATE_GAME_EXISTANCE 
 		STR_VAR 
 			game 	= ~%game%~
