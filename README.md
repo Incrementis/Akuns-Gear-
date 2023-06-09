@@ -37,7 +37,8 @@ Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fa
 
 ## Installation of EET in combination with this mod
 It seems, that the installation of EET and mods is not trivial.
-Here is my [fast](#) installation guide for EET, but possibly the [official](https://github.com/Gibberlings3/EET/blob/master/EET/readme-EET.html) installation guide is recommended.
+
+Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fast_installation_of_EET.pdf) installation guide for EET, but possibly the [official](https://github.com/Gibberlings3/EET/blob/master/EET/readme-EET.html) installation guide is recommended.
 
 # Content
 ## Armor "*Layers of Compassion*":
