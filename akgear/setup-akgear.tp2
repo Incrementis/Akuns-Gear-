@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~akgear/Backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.1.6~
+VERSION ~v1.3.8~
 AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
 LANGUAGE
@@ -24,10 +24,17 @@ LANGUAGE
 // Install "Akun's Gear" Mod
 // -------------------------
 BEGIN @1
-// GLOBAL INCLUDES(Don't touch this!)
+// LIBRARY INCLUDES(Don't touch this!)
 // ----------------------------------
 INCLUDE ~%MOD_FOLDER%/lib/simp_AddItemHeader.tph~
 INCLUDE ~%MOD_FOLDER%/lib/warnings.tph~
+INCLUDE ~%MOD_FOLDER%/lib/errors.tph~
+
+
+// GLOBAL INCLUDES(Don't touch this!)
+// ----------------------------------	
+INCLUDE ~%MOD_FOLDER%/lpa/errors/CheckIEgames.tph~
+
 
 // CREATING ITEM FILES
 // -------------------
@@ -368,4 +375,5 @@ BUT_ONLY // End patching: ~ERDANE.STO~
 
 // FOOTER INCLUDES
 // ---------------
-INCLUDE ~%MOD_FOLDER%/lpa/CheckSOD.tph~
+INCLUDE ~%MOD_FOLDER%/lpa/warnings/CheckSOD.tph~
+INCLUDE ~%MOD_FOLDER%/lpa/warnings/CheckIEgames.tph~

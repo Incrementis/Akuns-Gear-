@@ -8,10 +8,11 @@ directly from his stock (no dialogue options). Regular price is thousands of gol
 This mod is fanfiction.
 
 # Supported Games
-* BG:EE (Baldur's Gate:Enhanced Edition) 
+* BG:EE (Baldur's Gate:Enhanced Edition) tested version is 2.6.6.0
 
 # Compatibility
-* Installed SOD (Siege of Dragonspear) as DLC for BG:EE (see "Troubleshooting" here in readame to get things right)
+* Installed SOD (Siege of Dragonspear) as DLC for BG:EE (see "Troubleshooting" here in readme to get things right)
+* [EET](https://github.com/Gibberlings3/EET) (Enhanced Edition Trilogy) tested version is [13.4](https://github.com/Gibberlings3/EET/releases/tag/V13.4)
 
 # Languages
 * English
@@ -33,6 +34,10 @@ Here is a solution:
 	2. and after that [DLCmerger](https://github.com/Argent77/A7-DlcMerger/releases) needs to be installed.
 
 Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fast_installation_of_DLCmergerEN.pdf) Win64 installation guide for DLCmerger, but possibly the [official](https://github.com/Argent77/A7-DlcMerger) installation guide is recommended.
+
+## Installation of EET in combination with this mod
+It seems, that the installation of EET and mods is not trivial.
+Here is my [fast](#) installation guide for EET, but possibly the [official](https://github.com/Gibberlings3/EET/blob/master/EET/readme-EET.html) installation guide is recommended.
 
 # Content
 ## Armor "*Layers of Compassion*":
