@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~akgear/Backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.3.13~
+VERSION ~v1.3.14~
 AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
 LANGUAGE
