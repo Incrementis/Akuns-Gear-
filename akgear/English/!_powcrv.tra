@@ -9,12 +9,11 @@
 // ----------------------
 // Identified description
 // ----------------------
-@14=~This enchanted katana is called "Power Crave". It's actually part of a set of Wizard Slayer gear. Its name comes from its ability to increase its power with each successful hit. The power increase will rise to max +3, decreases over time or as power is consumed. In doing so, the sword changes its shape, which represents its strength. At first glance it looks like this sword is in poor condition, but upon closer inspection it becomes clear that this weapon with three jewels on the hilt is not a classic Kara-Tur katana and that the magic actually comes from the jewels. It was forged in Calimshan by an unknown blacksmith. Further investigation reveals that the magic within this item appears to be somehow incomplete. The customer who commissioned "Power Crave" from the unknown smith, is himself known as Akun Zaran, a halfling Wizard Slayer.
+@14=~The enchanted katana known as "Power Crave" is actually part of a set of Wizard Slayer gear.  Its name comes from its ability to increase in power with each successful hit, up to a maximum of +3. The power increase decreases over time or as power is consumed. As the power of the sword increases, its shape changes to reflect its strength. At first glance, the sword appears to be in poor condition. However, upon closer inspection, it becomes clear that this weapon is not a classic Kara-Tur katana. The magic of the sword comes from the three jewels on the hilt, which were forged in Calimshan by an unknown blacksmith. Further investigation reveals that the magic within the sword is somehow incomplete. The customer who commissioned "Power Crave" from the unknown smith, is himself known as Akun Zaran, a halfling Wizard Slayer.
 
 STATISTICS:
 
 Combat abilities:
-- Recommended as a main hand weapon
 - Increases the off-hands chance to hit as if it were equipped with the main hand while the weapon is charged
 - Increases its magic level by +1 with each hit, up to a maximum of +3
 - +1 gives the wielder one chance to hit to increase to +2 for 1 rounds
