@@ -96,4 +96,4 @@ Thanks to ["The Gibberlings 3"](https://www.gibberlings3.net/forums/) forum user
 # Copyright
 The "*AkunsGear*" Project is not developed, supported, or endorsed by BioWare™, Interplay/BlackIsle, Beamdog, or Wizards of the Coast.
 
-"*AkunsGear*" is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+"*AkunsGear*" is licensed under a [Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
