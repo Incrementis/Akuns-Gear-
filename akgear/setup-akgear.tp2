@@ -1,7 +1,7 @@
 // Never Forget: Comments can "lie", but code not so much ;P
 BACKUP 	~akgear/Backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.3.15~
+VERSION ~v1.3.17~
 AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
 LANGUAGE
@@ -33,7 +33,7 @@ INCLUDE ~%MOD_FOLDER%/lib/errors.tpa~
 
 // GLOBAL INCLUDES(Don't touch this!)
 // ----------------------------------	
-INCLUDE ~%MOD_FOLDER%/lpa/errors/CheckIEgames.tpa~
+INCLUDE ~%MOD_FOLDER%/laf/errors/CheckIEgames.tpa~
 
 
 // CREATING ITEM FILES
@@ -375,5 +375,5 @@ BUT_ONLY // End patching: ~ERDANE.STO~
 
 // FOOTER INCLUDES
 // ---------------
-INCLUDE ~%MOD_FOLDER%/lpa/warnings/CheckSOD.tpa~
-INCLUDE ~%MOD_FOLDER%/lpa/warnings/CheckIEgames.tpa~
+INCLUDE ~%MOD_FOLDER%/laf/warnings/CheckSOD.tpa~
+INCLUDE ~%MOD_FOLDER%/laf/warnings/CheckIEgames.tpa~
