@@ -1,9 +1,29 @@
 // Never Forget: Comments can "lie", but code not so much ;P
+// -----------
+// Information
+// -----------
 BACKUP 	~weidu_external/akgear/backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.3.18~
+VERSION ~v1.3.20~
 AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
+
+// --------------
+// Initialization
+// --------------
+ALWAYS 
+	// LIBRARY INCLUDES(Don't touch these)
+	// -----------------------------------
+	INCLUDE ~%MOD_FOLDER%/lib/simp_AddItemHeader.tph~
+	INCLUDE ~%MOD_FOLDER%/lib/warnings.tph~
+	INCLUDE ~%MOD_FOLDER%/lib/errors.tph~
+
+END// End of "ALWAYS"
+
+
+// ---------
+// Languages
+// ---------
 LANGUAGE
 	~English~	// Language
 	~English~	// Directory
@@ -20,17 +40,11 @@ LANGUAGE
 	~akgear/German/!_laofco.tra~
 	~akgear/German/!_powcrv.tra~
 
+
 // -------------------------
 // Install "Akun's Gear" Mod
 // -------------------------
 BEGIN @1
-// LIBRARY INCLUDES(Don't touch this!)
-// ----------------------------------
-INCLUDE ~%MOD_FOLDER%/lib/simp_AddItemHeader.tpa~
-INCLUDE ~%MOD_FOLDER%/lib/warnings.tpa~
-INCLUDE ~%MOD_FOLDER%/lib/errors.tpa~
-
-
 // GLOBAL INCLUDES(Don't touch this!)
 // ----------------------------------	
 INCLUDE ~%MOD_FOLDER%/laf/errors/CheckIEgames.tpa~
