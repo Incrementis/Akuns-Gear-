@@ -10,6 +10,9 @@ This mod is fanfiction.
 # Supported Games
 * BG:EE (Baldur's Gate:Enhanced Edition) tested version is 2.6.6.0
 
+# Operating Systems
+* Tested on Windows 11 and is likely to work on other operating systems
+
 # Compatibility
 * Installed SOD (Siege of Dragonspear) as DLC for BG:EE (see "Troubleshooting" here in readme to get things right)
 * [EET](https://github.com/Gibberlings3/EET) (Enhanced Edition Trilogy) tested version is [13.4](https://github.com/Gibberlings3/EET/releases/tag/V13.4)
