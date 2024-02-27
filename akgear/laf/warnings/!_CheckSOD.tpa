@@ -9,9 +9,7 @@ BEGIN
 END
 
 
-OUTER_SPRINT warning ~ENGLISH: SOD zip detected! Installation of Modmerge or DLCmerger is possibly needed. Please read the README.md for more information.
-
-DEUTSCH: SOD zip wurde erkannt! Die Installation von Modmerge oder DLCmerger wird vermutlich benötigt. Für weitere Informationen, bitte die README.md lesen.~ 
+OUTER_SPRINT warning @2147483644
 
 
 // Checks all files

@@ -16,9 +16,7 @@ BEGIN
 END
 
 
-OUTER_SPRINT warning ~ENGLISH: Insecure game compatibility detected! No guarantee for smooth functionality in case of successful installation. If you encounter an error after installation, this may be the cause.
-
-DEUTSCH: Modifikations-kompatibilität ist unsicher. Trotz erfolgreicher Installation, kann die reibungslose Funktionalität nicht garantiert werden. Falls die Installation Fehler generiert, kann die Kompatibilität eine der Ursachen sein.~ 
+OUTER_SPRINT warning @2147483646
 
 
 // Checks all game shortcuts

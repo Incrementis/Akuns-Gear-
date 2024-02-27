@@ -4,7 +4,7 @@
 // -----------
 BACKUP 	~weidu_external/akgear/backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.3.20~
+VERSION ~v1.3.22~
 AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
 
@@ -27,18 +27,22 @@ END// End of "ALWAYS"
 LANGUAGE
 	~English~	// Language
 	~English~	// Directory
-	~akgear/English/!_setup.tra~
-	~akgear/English/!_watodu.tra~
-	~akgear/English/!_laofco.tra~
-	~akgear/English/!_powcrv.tra~
+	~%MOD_FOLDER%/English/!_setup.tra~
+	~%MOD_FOLDER%/English/!_watodu.tra~
+	~%MOD_FOLDER%/English/!_laofco.tra~
+	~%MOD_FOLDER%/English/!_powcrv.tra~
+	~%MOD_FOLDER%/English/!_warnings.tra~
+	~%MOD_FOLDER%/English/!_errors.tra~
 	
 LANGUAGE
 	~Deutsch~	// Language
 	~German~	// Directory
-	~akgear/German/!_setup.tra~
-	~akgear/German/!_watodu.tra~
-	~akgear/German/!_laofco.tra~
-	~akgear/German/!_powcrv.tra~
+	~%MOD_FOLDER%/Deutsch/!_setup.tra~
+	~%MOD_FOLDER%/Deutsch/!_watodu.tra~
+	~%MOD_FOLDER%/Deutsch/!_laofco.tra~
+	~%MOD_FOLDER%/Deutsch/!_powcrv.tra~
+	~%MOD_FOLDER%/Deutsch/!_warnings.tra~
+	~%MOD_FOLDER%/Deutsch/!_errors.tra~
 
 
 // -------------------------
@@ -47,7 +51,7 @@ LANGUAGE
 BEGIN @1
 // GLOBAL INCLUDES(Don't touch this!)
 // ----------------------------------	
-INCLUDE ~%MOD_FOLDER%/laf/errors/CheckIEgames.tpa~
+INCLUDE ~%MOD_FOLDER%/laf/errors/!_CheckIEgames.tpa~
 
 
 // CREATING ITEM FILES
@@ -119,7 +123,7 @@ OUTER_SET unusable_kit4			= 0b11111101
 COPY_EXISTING ~!_SW1HWD.ITM~ override
 	// LOCAL INCLUDES(Content changeable)
 	// ----------------------------------
-	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/WeaveToDust.tpp~
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/!_WeaveToDust.tpp~
 
 	// LOCAL VARIABLES
 	// ---------------
@@ -163,7 +167,7 @@ BUT_ONLY // End patching: ~!_SW1HWD.ITM~
 COPY_EXISTING ~!_PLATLC.ITM~ override
 	// LOCAL INCLUDES(Content changeable)	
 	// ----------------------------------
-	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/LayersOfCompassion.tpp~
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/!_LayersOfCompassion.tpp~
 
 	// LOCAL VARIABLES
 	// ---------------
@@ -208,7 +212,7 @@ BUT_ONLY // End patching: ~!_PLATLC.ITM~
 COPY_EXISTING ~!_SW1PC0.ITM~ override
 	// LOCAL INCLUDES(Content changeable)
 	// ----------------------------------
-	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave0.tpp~
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/!_PowerCrave0.tpp~
 
 	// LOCAL VARIABLES
 	// ---------------
@@ -250,7 +254,7 @@ BUT_ONLY // End patching: ~!_SW1PC0.ITM~
 COPY_EXISTING ~!_SW1PC1.ITM~ override
 	// LOCAL INCLUDES(Content changeable)
 	// ----------------------------------
-	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave1.tpp~
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/!_PowerCrave1.tpp~
 
 	// LOCAL VARIABLES
 	// ---------------
@@ -294,7 +298,7 @@ BUT_ONLY // End patching: ~!_SW1PC1.ITM~
 COPY_EXISTING ~!_SW1PC2.ITM~ override
 	// LOCAL INCLUDES(Content changeable)
 	// ----------------------------------
-	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave2.tpp~
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/!_PowerCrave2.tpp~
 
 	// LOCAL VARIABLES
 	// ---------------
@@ -338,7 +342,7 @@ BUT_ONLY // End patching: ~!_SW1PC2.ITM~
 COPY_EXISTING ~!_SW1PC3.ITM~ override
 	// LOCAL INCLUDES(Content changeable)
 	// ----------------------------------
-	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/PowerCrave3.tpp~
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/!_PowerCrave3.tpp~
 
 	// LOCAL VARIABLES
 	// ---------------
@@ -383,11 +387,11 @@ BUT_ONLY // End patching: ~!_SW1PC3.ITM~
 COPY_EXISTING ~ERDANE.STO~ ~override~
 	// LOCAL INCLUDES(Content changeable)
 	// ----------------------------------
-	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/StoreAllItems.tpp~	
+	PATCH_INCLUDE ~%MOD_FOLDER%/lpf/!_StoreAllItems.tpp~	
 BUT_ONLY // End patching: ~ERDANE.STO~
 
 
 // FOOTER INCLUDES
 // ---------------
-INCLUDE ~%MOD_FOLDER%/laf/warnings/CheckSOD.tpa~
-INCLUDE ~%MOD_FOLDER%/laf/warnings/CheckIEgames.tpa~
+INCLUDE ~%MOD_FOLDER%/laf/warnings/!_CheckSOD.tpa~
+INCLUDE ~%MOD_FOLDER%/laf/warnings/!_CheckIEgames.tpa~

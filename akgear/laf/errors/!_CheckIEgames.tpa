@@ -17,9 +17,7 @@ BEGIN
 END
 
 
-OUTER_SPRINT error ~ENGLISH: Mod is incompatible with game! The Installation is aborted.
-
-DEUTSCH: Diese Modifikation is nicht mit dem zu installierenden Spiel kompatibel! Die Installation wird abgebrochen.~ 
+OUTER_SPRINT error @2147483647
 
 
 // Checks all game shortcuts
