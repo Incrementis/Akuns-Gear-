@@ -4,7 +4,7 @@
 // -----------
 BACKUP 	~weidu_external/akgear/backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.3.23~
+VERSION ~v1.3.26~
 AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
 
@@ -24,31 +24,33 @@ END// End of "ALWAYS"
 // ---------
 // Languages
 // ---------
+// Usage of %MOD_FOLDER% not recommended due to bug(see AL|EN's comment): 
+// https://www.gibberlings3.net/forums/topic/36760-item-mod-bgee-akuns-gear/  
 LANGUAGE
 	~English~	// Language
 	~English~	// Directory
-	~%MOD_FOLDER%/English/!_setup.tra~
-	~%MOD_FOLDER%/English/!_watodu.tra~
-	~%MOD_FOLDER%/English/!_laofco.tra~
-	~%MOD_FOLDER%/English/!_powcrv.tra~
-	~%MOD_FOLDER%/English/!_warnings.tra~
-	~%MOD_FOLDER%/English/!_errors.tra~
+	~akgear/English/!_setup.tra~
+	~akgear/English/!_watodu.tra~
+	~akgear/English/!_laofco.tra~
+	~akgear/English/!_powcrv.tra~
+	~akgear/English/!_warnings.tra~
+	~akgear/English/!_errors.tra~
 	
 LANGUAGE
 	~Deutsch~	// Language
 	~German~	// Directory
-	~%MOD_FOLDER%/Deutsch/!_setup.tra~
-	~%MOD_FOLDER%/Deutsch/!_watodu.tra~
-	~%MOD_FOLDER%/Deutsch/!_laofco.tra~
-	~%MOD_FOLDER%/Deutsch/!_powcrv.tra~
-	~%MOD_FOLDER%/Deutsch/!_warnings.tra~
-	~%MOD_FOLDER%/Deutsch/!_errors.tra~
+	~akgear/Deutsch/!_setup.tra~
+	~akgear/Deutsch/!_watodu.tra~
+	~akgear/Deutsch/!_laofco.tra~
+	~akgear/Deutsch/!_powcrv.tra~
+	~akgear/Deutsch/!_warnings.tra~
+	~akgear/Deutsch/!_errors.tra~
 
 
 // -------------------------
 // Install "Akun's Gear" Mod
 // -------------------------
-BEGIN @1
+BEGIN @1 LABEL "!_-AkunsGear-Main" DESIGNATED 1000
 // GLOBAL INCLUDES(Don't touch this!)
 // ----------------------------------	
 INCLUDE ~%MOD_FOLDER%/laf/errors/!_CheckIEgames.tpa~
