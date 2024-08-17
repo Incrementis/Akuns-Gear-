@@ -1,4 +1,23 @@
 // Never Forget: Comments can "lie", but code not so much ;P
+// ITEMTYPE MAINHAND SLOTS ONLY
+// ----------------------------
+LPF ADD_ITEMTYPE_IN_2DA
+	INT_VAR
+		inventorySlotType 	= 35
+	STR_VAR
+		soundGrab			= ~!_GAM_0A~
+		soundDrop			= ~!_GAM_0B~
+	RET
+		L_newtype 			= typeNumber // L_newtype is used in setup-akgear.tp2
+END
+// OPTIONAL: REGISTER ITEMTYPE/-CATEGORY !_UHILT(Uncomfortable Hilt)
+// -----------------------------------------------------------------
+LPF ADD_ITEMCATEGORY_IN_IDS
+INT_VAR
+	typeNumber 		= L_newtype 
+STR_VAR
+	categoryName	= ~!_UHILT~
+END
 // EQ BLADE MINOR COLOR
 // --------------------
 LPF ADD_ITEM_EQEFFECT

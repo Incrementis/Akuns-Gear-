@@ -9,12 +9,12 @@
 // ----------------------
 // Identified description
 // ----------------------
-@14=~Dieses verzauberte Katana heißt „Machtsucher“. Es ist Teil einer Magiertöter-Ausrüstung. Seinen Namen verdankt es seiner Fähigkeit, die eigene Kraft mit jedem erfolgreichen Treffer zu steigern. Die Magie der Klinge erhöht sich maximal auf +3 und nimmt mit der Zeit und mit jedem Angriff ab. Dabei wird die Stärke des Schwertes durch seine Form sichtbar. Auf den ersten Blick wirkt „Machtsucher“ in einem sehr schlechten Zustand, doch bei näherer Betrachtung wird klar, dass es sich bei dieser Kriegswaffe mit drei Juwelen am Griff nicht um ein klassisches Kara-Tur-Katana handelt und dass die Magie tatsächlich von den Juwelen herrührt. Es wurde in Calimshan von einem unbekannten Schmied hergestellt. Weitere Untersuchungen zeigen, dass die Magie in diesem Gegenstand irgendwie unvollständig wirkt. Der Kunde, der „Machtsucher“ bei dem unbekannten Schmied in Auftrag gab, ist selbst als Akun Zaran bekannt, ein Halbling-Magiertöter.
+@14=~Dieses verzauberte Katana heißt „Machtsucher“. Es ist Teil einer Magiertöter-Ausrüstung. Seinen Namen verdankt es seiner Fähigkeit, die eigene Kraft mit jedem erfolgreichen Treffer zu steigern. Die Magie der Klinge erhöht sich maximal auf +3 und nimmt mit der Zeit und mit jedem Angriff ab. Dabei wird die Stärke des Schwertes durch seine Form sichtbar. Auf den ersten Blick wirkt „Machtsucher“ in einem sehr schlechten Zustand, und tatsächlich liegt die Waffe, aufgrund seines sehr ungewöhnlchen Griffs, unbequem in der Hand. Doch bei näherer Betrachtung wird klar, dass es sich bei dieser Kriegswaffe mit drei Juwelen am Griff nicht um ein klassisches Kara-Tur-Katana handelt und dass die Magie tatsächlich von den Juwelen herrührt. Es wurde in Calimshan von einem unbekannten Schmied hergestellt. Weitere Untersuchungen zeigen, dass die Magie in diesem Gegenstand irgendwie unvollständig wirkt. Der Kunde, der „Machtsucher“ bei dem unbekannten Schmied in Auftrag gab, ist selbst als Akun Zaran bekannt, ein Halbling-Magiertöter.
 
 EIGENSCHAFTEN:
 
 Waffenfähigkeiten:
-- Als Haupthandwaffe empfohlen
+- Nur als Haupthandwaffe verwendbar
 - Erhöht die Trefferchance der Nebenhand, als ob sie mit der Haupthand ausgerüstet wäre, sobald die Waffe magisch aufgeladen ist
 - +1 gibt dem Träger eine Runde lang eine Trefferchance, die Waffe auf +2 zu erhöhen
 - +1 gibt dem Träger zwei Runden lang zwei Trefferchancen, die Waffe auf +3 zu erhöhen

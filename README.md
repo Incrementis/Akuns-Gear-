@@ -10,6 +10,10 @@ This mod is fanfiction.
 # Supported Games
 * BG:EE (Baldur's Gate:Enhanced Edition) tested version is 2.6.6.0
 
+# Discussion
+* [Beamdog Forums](https://forums.beamdog.com/discussion/87411/item-mod-akuns-gear)
+* [G3 Forums](https://www.gibberlings3.net/forums/topic/36760-item-mod-bgee-akuns-gear/)
+
 # Operating Systems
 * Tested on Windows 11 and is likely to work on other operating systems
 
@@ -19,6 +23,7 @@ This mod is fanfiction.
 * [Project Infinity](https://github.com/ALIENQuake/ProjectInfinity) is untested as I don't use Project Infinity, 
 but the Akun's Gear mod provides an INI file for PI as I realize PI has an active user group. 
 I don't recommend using Project Infinity, because the source code is not open.
+* Since it dynamically writes a new item category into the system, it is recommended to install this mod last. Otherwise, any mod that writes a hardcoded item category number will overwrite that mod item category (in general, hardcoding should be prevented, otherwise it may conflict with other mods).
 
 # Languages
 * English
@@ -65,8 +70,8 @@ Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fa
 ![Power Crave 1](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B1.png)
 ![Power Crave 2](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B2.png)
 ![Power Crave 3](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B3.png)
-
-  - Recommended as a main hand weapon
+  - It has an individual grip and release sound and is internally defined as “Uncomfortable Hilt” (!_UHILT).
+  - Main hand only
   - Increases the off-hands chance to hit as if it were equipped with the main hand while the weapon
 is charged
   - Increases its magic level by +1 with each hit, up to a maximum of +3
@@ -86,7 +91,7 @@ For more detailed information, please visit this [projects wiki](https://github.
 ![Halfling GIF](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/AnimatedImages/AkunsGear.gif)
 
 # Special Thanks
-Thanks to ["The Gibberlings 3"](https://www.gibberlings3.net/forums/) forum users who helped me with hints and information:
+Thanks to ["The Gibberlings 3"](https://www.gibberlings3.net/forums/) forum users and Infinity Engine discord server users who helped me with hints and information:
 * CamDawg
 * Graion Dilach
 * jmerry
@@ -98,6 +103,11 @@ Thanks to ["The Gibberlings 3"](https://www.gibberlings3.net/forums/) forum user
 * argent77
 * Bubb
 * suy
+* The Artisan
+* lynx
+
+Thanks for offering code
+* Ardanis [Toss your semi-useful WeiDU macros here](https://www.gibberlings3.net/forums/topic/28835-toss-your-semi-useful-weidu-macros-here/?do=findComment&comment=254219) (It has been heavily modified on my part)
 
 # Copyright
 The "*AkunsGear*" Project is not developed, supported, or endorsed by BioWare™, Interplay/BlackIsle, Beamdog, or Wizards of the Coast.

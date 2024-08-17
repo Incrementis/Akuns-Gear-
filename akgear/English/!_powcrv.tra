@@ -9,7 +9,7 @@
 // ----------------------
 // Identified description
 // ----------------------
-@14=~The enchanted katana known as "Power Crave" is actually part of a set of Wizard Slayer gear.  Its name comes from its ability to increase in power with each successful hit, up to a maximum of +3. The power increase decreases over time or as power is consumed. As the power of the sword increases, its shape changes to reflect its strength. At first glance, the sword appears to be in poor condition. However, upon closer inspection, it becomes clear that this weapon is not a classic Kara-Tur katana. The magic of the sword comes from the three jewels on the hilt, which were forged in Calimshan by an unknown blacksmith. Further investigation reveals that the magic within the sword is somehow incomplete. The customer who commissioned "Power Crave" from the unknown smith, is himself known as Akun Zaran, a halfling Wizard Slayer.
+@14=~The enchanted katana known as "Power Crave" is actually part of a set of Wizard Slayer gear.  Its name comes from its ability to increase in power with each successful hit, up to a maximum of +3. The power increase decreases over time or as power is consumed. As the power of the sword increases, its shape changes to reflect its strength. At first glance, "Power Crave" appears to be in very poor condition, and indeed the weapon, due to its very unusual hilt, is uncomfortable to hold. However, upon closer inspection, it becomes clear that this weapon is not a classic Kara-Tur katana. The magic of the sword comes from the three jewels on the hilt, which were forged in Calimshan by an unknown blacksmith. Further investigation reveals that the magic within the sword is somehow incomplete. The customer who commissioned "Power Crave" from the unknown smith, is himself known as Akun Zaran, a halfling Wizard Slayer.
 
 STATISTICS:
 
@@ -21,7 +21,7 @@ Combat abilities:
 - +3 allows the wielder three attacks for 2 rounds, after which the sword reverts to its non-magical state
 
 Restrictions:
-- Recommended as a main hand weapon
+- Main hand only
 - Character needs level 4 to equip "Power Crave"
 - Can only be equipped by Wizard Slayer
 

@@ -4,7 +4,7 @@
 // -----------
 BACKUP 	~weidu_external/akgear/backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.3.28~
+VERSION ~v1.4.0~
 AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
 
@@ -17,6 +17,8 @@ ALWAYS
 	INCLUDE ~%MOD_FOLDER%/lib/simp_AddItemHeader.tph~
 	INCLUDE ~%MOD_FOLDER%/lib/warnings.tph~
 	INCLUDE ~%MOD_FOLDER%/lib/errors.tph~
+	INCLUDE ~%MOD_FOLDER%/lib/2daHandling.tph~
+	INCLUDE ~%MOD_FOLDER%/lib/IdsHandling.tph~
 
 END// End of "ALWAYS"
 
@@ -69,6 +71,9 @@ CREATE ~ITM~ ~!_SW1PC3~ // "Power Crave" +3
 // BAM FILES FOR ALL ITEMS
 // -----------------------
 COPY ~%MOD_FOLDER%/BAM~ ~override~
+// WAV FILES FOR POWER-CRAVE ITEMS
+// -------------------------------
+COPY ~%MOD_FOLDER%/sound/inventory~ ~override~
 
 
 // ITEM CONSTANTS HEADER(Don't touch this!)
@@ -238,7 +243,7 @@ COPY_EXISTING ~!_SW1PC0.ITM~ override
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
 	WRITE_SHORT ITM_WEIGHT 				weight 	
 	WRITE_SHORT ITM_LORE 				lore 
-	WRITE_SHORT ITM_TYPE				type
+	WRITE_SHORT ITM_TYPE				L_newtype
 	WRITE_SHORT ITM_ANIMATION			animation	
 	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
