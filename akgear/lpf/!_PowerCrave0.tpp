@@ -16,7 +16,7 @@ LPF ADD_ITEMCATEGORY_IN_IDS
 INT_VAR
 	typeNumber 		= L_newtype 
 STR_VAR
-	categoryName	= ~!_UHILT~
+	categoryName	= ~UHILT!_~
 END
 // EQ BLADE MINOR COLOR
 // --------------------

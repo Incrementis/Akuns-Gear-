@@ -70,7 +70,7 @@ Here is my [fast](https://github.com/Incrementis/Akuns-Gear-/blob/main/akgear/Fa
 ![Power Crave 1](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B1.png)
 ![Power Crave 2](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B2.png)
 ![Power Crave 3](https://github.com/Incrementis/Infinity-Engine-Modding-Wiki-Content-/blob/main/AkunsGear/Icons/II_Power_Crave%2B3.png)
-  - It has an individual grip and release sound and is internally defined as “Uncomfortable Hilt” (!_UHILT).
+  - It has an individual grip and release sound and is internally defined as “Uncomfortable Hilt” (UHILT!_).
   - Main hand only
   - Increases the off-hands chance to hit as if it were equipped with the main hand while the weapon
 is charged
@@ -105,6 +105,7 @@ Thanks to ["The Gibberlings 3"](https://www.gibberlings3.net/forums/) forum user
 * suy
 * The Artisan
 * lynx
+* Connelly
 
 Thanks for offering code
 * Ardanis [Toss your semi-useful WeiDU macros here](https://www.gibberlings3.net/forums/topic/28835-toss-your-semi-useful-weidu-macros-here/?do=findComment&comment=254219) (It has been heavily modified on my part)
