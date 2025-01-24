@@ -16,7 +16,7 @@ BEGIN
 END
 
 
-OUTER_SPRINT warning @2147483646
+OUTER_SPRINT warning @1073741822
 
 
 // Checks all game shortcuts
