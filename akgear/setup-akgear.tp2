@@ -56,6 +56,7 @@ BEGIN @1 LABEL "!_-AkunsGear-Main" DESIGNATED 1000
 // GLOBAL INCLUDES(Don't touch this!)
 // ----------------------------------	
 INCLUDE ~%MOD_FOLDER%/laf/errors/!_CheckIEgames.tpa~
+INCLUDE ~%MOD_FOLDER%/laf/!_2daAndIdsRegistrations.tpa~
 
 
 // CREATING ITEM FILES
