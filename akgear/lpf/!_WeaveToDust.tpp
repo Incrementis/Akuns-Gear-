@@ -64,5 +64,5 @@ LPF ADD_ITEM_EFFECT
 		header			= 1 // Add effect to only x item abilities(0=every item ability)
 		type 			= 1 // Add effect to item ability with type x(1 = Melee)
 		target 			= 2 // Preset target
-		probability1 	= 20// x% chance of activating the effect
+		probability1 	= 19// (x+1)% chance of activating the effect
 END
