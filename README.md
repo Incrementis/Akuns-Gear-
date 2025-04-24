@@ -19,7 +19,7 @@ This mod is fanfiction.
 
 # Compatibility
 * Installed SOD (Siege of Dragonspear) as DLC for BG:EE (see "Troubleshooting" here in readme to get things right)
-* [EET](https://github.com/Gibberlings3/EET) (Enhanced Edition Trilogy) tested version is [13.4](https://github.com/Gibberlings3/EET/releases/tag/V13.4)
+* [EET](https://github.com/Gibberlings3/EET) (Enhanced Edition Trilogy) tested version is [14.1](https://github.com/Gibberlings3/EET/releases/tag/v14.1)
 * [Project Infinity](https://github.com/ALIENQuake/ProjectInfinity) is untested as I don't use Project Infinity, 
 but the Akun's Gear mod provides an INI file for PI as I realize PI has an active user group. 
 I don't recommend using Project Infinity, because the source code is not open.

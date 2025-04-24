@@ -1,0 +1,183 @@
+// Never Forget: Comments can "lie", but code not so much ;P
+
+// BGEE STO ARRAYS
+//-----------------
+// Excluded resfrefs
+ACTION_DEFINE_ARRAY BGEE_singleSTOs
+BEGIN
+	~INN0103~	// Splurging Sturgeon
+	~INN0105~	// Blade and Stars
+	~INN0116~	// Helm and Cloak
+	~INN0119~	// Three Old Kegs
+	~INN1306~	// Inn
+	~INN3307~	// Burning Wizard
+	~INN3357~	// Red Sheaf Inn
+	~INN4801~	// Nashkel Inn
+	~TAV0114~	// Blushing Mermaid
+	~TAV0133~	// Low Lantern
+	~TAV0154~	// Keexie Tavern
+	~TAV0720~	// Drakon Tavern
+	~TAV0810~	// Maltz's Weapon Shop
+	~TAV1215~	// Jopalin's Tavern
+	~TAV4809~	// Belching Dragon Tavern
+END
+// Excluded strrefs
+ACTION_DEFINE_ARRAY BGEE_groupSTOs
+BEGIN
+	25502	// Gem Bag
+	25505	// Scroll Case
+	31234	// Ammo Belt
+	25508	// Potion Case
+	29089	// Brendak
+	29094	// Devlin Taralon
+	29136	// Concocter
+	29090	// Magda
+	29087	// Thardek
+	"-1"	// No such index
+	11837	// Officer Vai
+END
+
+// BGEE:SoD STO ARRAYS
+//--------------------
+// Excluded resfrefs
+ACTION_DEFINE_ARRAY SoD_singleSTOs
+BEGIN
+	~INN0103~	// Splurging Sturgeon
+	~INN0105~	// Blade and Stars
+	~INN0116~	// Helm and Cloak
+	~INN0119~	// Three Old Kegs
+	~INN1306~	// Inn
+	~INN3307~	// Burning Wizard
+	~INN3357~	// Red Sheaf Inn
+	~INN4801~	// Nashkel Inn
+	~TAV0114~	// Blushing Mermaid
+	~TAV0133~	// Low Lantern
+	~TAV0154~	// Keexie Tavern
+	~TAV0720~	// Drakon Tavern
+	~TAV0810~	// Maltz's Weapon Shop
+	~TAV1215~	// Jopalin's Tavern
+	~TAV4809~	// Belching Dragon Tavern
+	~bddeep~	// Brother Deepvein
+	~bdfrair~	// Frair Tajik
+	~bdmizhen~	// Mizhena
+	~bdnazram~	// Nazramu
+	~bdphilo~	// Philo
+	~bdthaird~	// Thaird
+	~bdthirri~	// Thirrim
+	~bdtutor~	// Officer Tutorial
+END
+// Excluded strrefs
+ACTION_DEFINE_ARRAY SoD_groupSTOs
+BEGIN
+	25502 // Gem Bag
+	25505 // Scroll Case
+	31234 // Ammo Belt
+	25508 // Potion Case
+	29089 // Brendak
+	29094 // Devlin Taralon
+	29136 // Concocter
+	29088 // Gorch the Armorer
+	29090 // Magda
+	29087 // Thardek
+	"-1"  // No such index
+	11837 // Officer Vai
+	55813 // Jegg
+	69413 // Key Ring
+END
+
+
+// EET STO ARRAYS
+//---------------
+// Excluded resfrefs
+ACTION_DEFINE_ARRAY EET_singleSTOs
+BEGIN
+	~INN0103~	// Splurging Sturgeon
+	~INN0105~	// Blade and Stars
+	~INN0116~	// Helm and Cloak
+	~INN0119~	// Three Old Kegs
+	~INN1306~	// Inn
+	~INN3307~	// Burning Wizard
+	~INN3357~	// Red Sheaf Inn
+	~INN4801~	// Nashkel Inn
+	~TAV0114~	// Blushing Mermaid
+	~TAV0133~	// Low Lantern
+	~TAV0154~	// Keexie Tavern
+	~TAV0720~	// Drakon Tavern
+	~TAV1215~	// Jopalin's Tavern
+	~TAV4809~	// Belching Dragon Tavern
+	~bddeep~	// Brother Deepvein
+	~bdfrair~	// Frair Tajik
+	~bdmizhen~	// Mizhena
+	~bdnazram~	// Nazramu
+	~bdphilo~	// Philo
+	~bdthaird~	// Thaird
+	~bdthirri~	// Thirrim
+	~bdtutor~	// Officer Tutorial
+	~AMBAR01~ 	// The Zephir
+	~ohbhuegr~	// Hue Greenleaf
+	~OHBSDWM~	// Weapon Merchant
+	~OHDSUMM~	// Summerheigh
+	~ohnhuegr~	// Hue Greenleaf
+	~ohnpotme~	// Merchant
+	~ohnsdwm~	// Merchant
+	~ohnwanme~	// Merchant
+	~TEMPLE~	// Waukeen's Wares
+END
+// Excluded strrefs
+ACTION_DEFINE_ARRAY EET_groupSTOs
+BEGIN
+	56840 	// Gem Bag
+	56856 	// Scroll Case
+	66368 	// Ammo Belt
+	73893 	// Potion Case
+	88920 	// The Concocter
+	229089 	// Brendak
+	74117 	// Devlin Taralon
+	229136 	// Concocter
+	74111 	// Gorch the Armorer
+	229090 	// Magda
+	229087 	// Thardek
+	"-1"  	// No such index
+	11837 	// Officer Vai
+	255813 	// Jegg
+	269413 	// Key Ring
+END
+
+// ---Baldur's Gate Enhanced Edition
+ACTION_IF (GAME_IS ~bgee~) AND NOT(GAME_INCLUDES ~sod~) THEN
+BEGIN
+	LAF ADD_ITEMTYPES_IN_STO
+		INT_VAR
+			itemtype 		= ~%uncomfortableHilt%~ // See "laf/!_2daAndIdsRegistration.tpa"
+			invertSelection = 1
+		STR_VAR
+			groupStoArray 	= "BGEE_groupSTOs"
+			singleStoArray 	= "BGEE_singleSTOs"
+	END
+END
+
+// ---BGEE:Siege of Dragonspear
+ACTION_IF (GAME_INCLUDES ~sod~) THEN
+BEGIN
+	LAF ADD_ITEMTYPES_IN_STO
+		INT_VAR
+			itemtype 		= ~%uncomfortableHilt%~ // See "laf/!_2daAndIdsRegistration.tpa"
+			invertSelection = 1
+		STR_VAR
+			groupStoArray 	= "SoD_groupSTOs"
+			singleStoArray 	= "SoD_singleSTOs"
+	END
+END
+
+// ---Enhanced Edition Trilogy
+ACTION_IF (GAME_IS ~eet~) THEN
+BEGIN
+	LAF ADD_ITEMTYPES_IN_STO
+		INT_VAR
+			itemtype 		= ~%uncomfortableHilt%~ // See "laf/!_2daAndIdsRegistration.tpa"
+			invertSelection = 1
+		STR_VAR
+			groupStoArray 	= "EET_groupSTOs"
+			singleStoArray 	= "EET_singleSTOs"
+	END
+END

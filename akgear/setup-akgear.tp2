@@ -4,7 +4,7 @@
 // -----------
 BACKUP 	~weidu_external/akgear/backup~ // %MOD_FOLDER% doesn't work here
 AUTHOR 	~Incrementis (incrementis[@]gmail.com)~
-VERSION ~v1.4.4~
+VERSION ~v1.4.7~
 AUTO_EVAL_STRINGS// This will prevent the need of EVAL for string variables
 
 
@@ -19,6 +19,7 @@ ALWAYS
 	INCLUDE ~%MOD_FOLDER%/lib/errors.tph~
 	INCLUDE ~%MOD_FOLDER%/lib/2daHandling.tph~
 	INCLUDE ~%MOD_FOLDER%/lib/IdsHandling.tph~
+	INCLUDE ~%MOD_FOLDER%/lib/StoHandling.tph~
 
 END// End of "ALWAYS"
 
@@ -244,7 +245,7 @@ COPY_EXISTING ~!_SW1PC0.ITM~ override
 	WRITE_LONG 	ITM_UNUSABLE_BY			unusable_by
 	WRITE_SHORT ITM_WEIGHT 				weight 	
 	WRITE_SHORT ITM_LORE 				lore 
-	WRITE_SHORT ITM_TYPE				L_newtype
+	WRITE_SHORT ITM_TYPE				uncomfortableHilt 	// See "laf/!_2daAndIdsRegistration.tpa"
 	WRITE_SHORT ITM_ANIMATION			animation	
 	WRITE_BYTE	ITM_MIN_STRENGTH 		min_strength
 	WRITE_BYTE 	ITM_MIN_LEVEL	 		min_level
@@ -401,5 +402,6 @@ BUT_ONLY // End patching: ~ERDANE.STO~
 
 // FOOTER INCLUDES
 // ---------------
+INCLUDE ~%MOD_FOLDER%/laf/!_itemtypesSaleability.tpa~
 INCLUDE ~%MOD_FOLDER%/laf/warnings/!_CheckSOD.tpa~
 INCLUDE ~%MOD_FOLDER%/laf/warnings/!_CheckIEgames.tpa~
