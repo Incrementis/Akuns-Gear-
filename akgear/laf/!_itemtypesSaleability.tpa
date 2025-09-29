@@ -17,7 +17,6 @@ BEGIN
 	~TAV0133~	// Low Lantern
 	~TAV0154~	// Keexie Tavern
 	~TAV0720~	// Drakon Tavern
-	~TAV0810~	// Maltz's Weapon Shop
 	~TAV1215~	// Jopalin's Tavern
 	~TAV4809~	// Belching Dragon Tavern
 END
@@ -54,7 +53,6 @@ BEGIN
 	~TAV0133~	// Low Lantern
 	~TAV0154~	// Keexie Tavern
 	~TAV0720~	// Drakon Tavern
-	~TAV0810~	// Maltz's Weapon Shop
 	~TAV1215~	// Jopalin's Tavern
 	~TAV4809~	// Belching Dragon Tavern
 	~bddeep~	// Brother Deepvein
@@ -92,7 +90,7 @@ END
 ACTION_DEFINE_ARRAY EET_singleSTOs
 BEGIN
 	~INN0103~	// Splurging Sturgeon
-	~INN0105~	// Blade and Stars
+ 	~INN0105~	// Blade and Stars
 	~INN0116~	// Helm and Cloak
 	~INN0119~	// Three Old Kegs
 	~INN1306~	// Inn
@@ -127,7 +125,7 @@ END
 ACTION_DEFINE_ARRAY EET_groupSTOs
 BEGIN
 	56840 	// Gem Bag
-	56856 	// Scroll Case
+ 	56856 	// Scroll Case
 	66368 	// Ammo Belt
 	73893 	// Potion Case
 	88920 	// The Concocter
@@ -154,10 +152,9 @@ BEGIN
 			groupStoArray 	= "BGEE_groupSTOs"
 			singleStoArray 	= "BGEE_singleSTOs"
 	END
-END
-
+END ELSE
 // ---BGEE:Siege of Dragonspear
-ACTION_IF (GAME_INCLUDES ~sod~) THEN
+ACTION_IF (GAME_IS ~bgee~) AND (GAME_INCLUDES ~sod~) THEN
 BEGIN
 	LAF ADD_ITEMTYPES_IN_STO
 		INT_VAR
@@ -167,8 +164,7 @@ BEGIN
 			groupStoArray 	= "SoD_groupSTOs"
 			singleStoArray 	= "SoD_singleSTOs"
 	END
-END
-
+END ELSE 
 // ---Enhanced Edition Trilogy
 ACTION_IF (GAME_IS ~eet~) THEN
 BEGIN

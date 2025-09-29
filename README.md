@@ -15,7 +15,7 @@ This mod is fanfiction.
 * [G3 Forums](https://www.gibberlings3.net/forums/topic/36760-item-mod-bgee-akuns-gear/)
 
 # Operating Systems
-* Tested on Windows 11 and is likely to work on other operating systems
+* Tested on Windows 11 (and probably works on other operating systems, but no guarantee)
 
 # Compatibility
 * Installed SOD (Siege of Dragonspear) as DLC for BG:EE (see "Troubleshooting" here in readme to get things right)
@@ -23,7 +23,6 @@ This mod is fanfiction.
 * [Project Infinity](https://github.com/ALIENQuake/ProjectInfinity) is untested as I don't use Project Infinity, 
 but the Akun's Gear mod provides an INI file for PI as I realize PI has an active user group. 
 I don't recommend using Project Infinity, because the source code is not open.
-* Since it dynamically writes a new item category into the system, it is recommended to install this mod last. Otherwise, any mod that writes a hardcoded item category number will overwrite that mod item category (in general, hardcoding should be prevented, otherwise it may conflict with other mods).
 
 # Languages
 * English
@@ -106,6 +105,7 @@ Thanks to ["The Gibberlings 3"](https://www.gibberlings3.net/forums/) forum user
 * The Artisan
 * lynx
 * Connelly
+* Angel
 
 Thanks for offering code
 * Ardanis [Toss your semi-useful WeiDU macros here](https://www.gibberlings3.net/forums/topic/28835-toss-your-semi-useful-weidu-macros-here/?do=findComment&comment=254219) (It has been heavily modified on my part)
