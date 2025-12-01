@@ -27,17 +27,17 @@ DEFINE_DIMORPHIC_FUNCTION ~ADD_ITEMTYPE_IN_2DA~
 	RET
 		typeNumber
 BEGIN
-	// Checks if grab sound name has more than 8 characters
+	// Checks if grab sound name has more than 8 characters.
 	ACTION_IF (STRING_LENGTH ~%soundGrab%~ > 8) THEN
 	BEGIN
 		OUTER_SET numbers = STRING_LENGTH ~%soundGrab%~
-		FAIL ~DEFINE_DIMORPHIC_FUNCTION ADD_ITEMTYPE_IN_2DA -> The argument '%soundGrab%' for sound is %numbers% characters long. The maximum allowed length for this argument is 8 characters~
+		FAIL ~DEFINE_DIMORPHIC_FUNCTION ADD_ITEMTYPE_IN_2DA -> The argument '%soundGrab%' for soundGrab is %numbers% characters long. The maximum allowed length for this argument is 8 characters.~
 	END
-	// Checks if drop sound name has more than 8 characters
+	// Checks if drop sound name has more than 8 characters.
 	ACTION_IF (STRING_LENGTH ~%soundDrop%~ > 8) THEN
 	BEGIN
 		OUTER_SET numbers = STRING_LENGTH ~%soundDrop%~
-		FAIL ~DEFINE_DIMORPHIC_FUNCTION ADD_ITEMTYPE_IN_2DA -> The argument '%soundDrop%' for sound is %numbers% characters long. The maximum allowed length for this argument is 8 characters~
+		FAIL ~DEFINE_DIMORPHIC_FUNCTION ADD_ITEMTYPE_IN_2DA -> The argument '%soundDrop%' for soundDrop is %numbers% characters long. The maximum allowed length for this argument is 8 characters.~
 	END
 	// Checks that inventorySlotType is not a negative number, because there are no negative slot numbers.
 	ACTION_IF (~%inventorySlotType%~ < 0) THEN
@@ -55,23 +55,23 @@ BEGIN
 			SET numCols = 4
 		END	
 		// Reads the entire 2DA content into memory.
-		READ_2DA_ENTRIES_NOW ~itemtypes~ ~%numCols%~
+		READ_2DA_ENTRIES_NOW ~itemtypes_table~ ~%numCols%~
 		
-		FOR (rowIndex = 0; rowIndex < itemtypes; ++rowIndex) BEGIN
+		FOR (rowIndex = 0; rowIndex < itemtypes_table; ++rowIndex) BEGIN
 			// Gets the unique identifier for the item type from the list of item types.
-			READ_2DA_ENTRY_FORMER itemtypes rowIndex 0 itemTypeId
+			READ_2DA_ENTRY_FORMER itemtypes_table rowIndex 0 itemTypeId
 			// Creates an array of item type reference numbers from the first column.
 			SPRINT $itemtypes("%rowIndex%") "%itemTypeId%"
 		END
 		
 		// Finds the highest item type reference number. 
 		SET ~maxTypeNumber~ = 0
-		PHP_EACH itemtypes AS key => value BEGIN			
-			PATCH_IF (~%maxTypeNumber%~ < ~%value%~) THEN
+		PHP_EACH itemtypes AS key => value BEGIN		
+			PATCH_IF (IS_AN_INT ~%value%~) && (~%maxTypeNumber%~ < ~%value%~) THEN
 			BEGIN
 				SET ~maxTypeNumber~ = ~%value%~
 			END
-		END		
+		END
 		
 		// Calculates the new item type by incrementing the existing value.
 		// This works because hex value begins by 0x00.
@@ -86,4 +86,154 @@ BEGIN
 		APPEND ~ITEMTYPE.2DA~ "%typeNumber%         %soundGrab%    %soundDrop%    %inventorySlotType%"
 	BUT_ONLY // End of "COPY_EXISTING"
 
-END // End of "ADD_ITEMTYPE"
+END // End of "ADD_ITEMTYPE_IN_2DA"
+
+
+
+// Purpose: Creates a Reading Sequence 2DA file.
+//			It is basically a simplified "chapter 2da" file with stricter limitations.
+//			Refer to this forum thread for a deeper "chapter 2da" explanation:
+// 			https://www.gibberlings3.net/forums/topic/38904-what-do-the-elements-of-chapterxxx2da-mean/
+// 2DA File Format:
+// --------------------------------------------------------------
+//	2DA     V1.0
+//	<background image>
+//       	 0       1       2       3		....
+//	SWITCH  DEFAULT DEFAULT DEFAULT DEFAULT ....
+//	DEFAULT <strref><strref><strref><strref>....
+// --------------------------------------------------------------
+// Parameters:|
+// ============
+// 2daLocation 	-> 	Path to create the 2da file. 
+//					Default is the game's override folder.	
+// 2daFilename 	-> 	Name of the 2da file.
+//					This has to be a string value with max 8 characters. 
+//					No file extension is needed(e.g. "myRESQ00" and not "myRESQ00.2da").
+// bgImage 		->	Name of the background image.
+//					This has to be a string value with max 8 characters. 
+//					No file extension is needed(e.g. "myBgImg" and not "myBgImg.MOS").
+// strrefArray 	->	Array containing all string references (strrefs) 
+//					in the correct order for the "DEFAULT" row.				
+DEFINE_ACTION_FUNCTION ~CREATE_READINGSEQUENCE_2DA~
+	STR_VAR
+		2daLocation		= "override"
+		2daFilename		= "!_NULL"
+		bgImage 		= "!_NULL"
+		strrefArray 	= "!_NULL"
+BEGIN
+	// Check if valid 2daFilename argument is given.
+	ACTION_IF (~%2daFilename%~ STRING_EQUAL ~!_NULL~) THEN 
+	BEGIN
+		FAIL ~DEFINE_ACTION_FUNCTION CREATE_READINGSEQUENCE_2DA -> The correct argument for 2daFilename is missing. The argument !_NULL is forbidden.~
+	END
+	// Check if valid bgImage argument is given.
+	ACTION_IF (~%bgImage%~ STRING_EQUAL ~!_NULL~) THEN 
+	BEGIN
+		FAIL ~DEFINE_ACTION_FUNCTION CREATE_READINGSEQUENCE_2DA -> The correct argument for bgImage is missing. The argument !_NULL is forbidden.~
+	END
+	// Checks if file name has more than 8 characters.
+	ACTION_IF (STRING_LENGTH ~%2daFilename%~ > 8) THEN
+	BEGIN
+		OUTER_SET numbers = STRING_LENGTH ~%2daFilename%~
+		FAIL ~DEFINE_ACTION_FUNCTION CREATE_READINGSEQUENCE_2DA -> The argument '%2daFilename%' for file name is %numbers% characters long. The maximum allowed length for this argument is 8 characters.~
+	END
+	// Checks if file name has more than 8 characters.
+	ACTION_IF (STRING_LENGTH ~%bgImage%~ > 8) THEN
+	BEGIN
+		OUTER_SET numbers = STRING_LENGTH ~%bgImage%~
+		FAIL ~DEFINE_ACTION_FUNCTION CREATE_READINGSEQUENCE_2DA -> The argument '%bgImage%' for background image file name is %numbers% characters long. The maximum allowed length for this argument is 8 characters.~
+	END
+	// Checks if a proper array name is given.	
+	ACTION_IF (~%strrefArray%~ STRING_EQUAL ~!_NULL~) THEN 
+	BEGIN
+		FAIL ~DEFINE_ACTION_FUNCTION CREATE_READINGSEQUENCE_2DA -> The correct array name as an argument is missing. The array name !_NULL is forbidden.~
+	END
+
+	// Defines file inline then creates and copies file to location(see COPY)
+	<<<<<<<<./weidu_external/workspace/!_temporaryFile.2da
+	2DA V1.0
+	%bgImage%>>>>>>>>
+
+	COPY ~./weidu_external/workspace/!_temporaryFile.2da~ ~./%2daLocation%/%2daFilename%.2da~ EVALUATE_BUFFER
+		// Loop variables
+		SPRINT strrefPrevious 		~~
+		SPRINT coulmnIndexPrevious 	~~
+		SPRINT switchPrevious 		~~
+		FOR (strrefIndex = 0; VARIABLE_IS_SET $~%strrefArray%~(~%strrefIndex%~) ; ++strrefIndex)
+		BEGIN
+			// ---Init variables
+			SPRINT columnIndex 		~%strrefIndex%~
+			SPRINT switch		 	~DEFAULT~
+			SPRINT strref 			$~%strrefArray%~(~%strrefIndex%~)
+			// --- Concatenates
+			SPRINT coulmnIndexRow 	~%coulmnIndexPrevious% ~^~ %columnIndex%~
+			SPRINT switchRow 		~%switchPrevious% ~^~ %switch%~
+			SPRINT strrefRow 		~%strrefPrevious% ~^~ %strref%~
+			// --- Prepairs previous values for next iteration
+			SPRINT coulmnIndexPrevious 	~%coulmnIndexRow%~
+			SPRINT switchPrevious 		~%switchRow%~
+			SPRINT strrefPrevious 		~%strrefRow%~
+		END
+		// --- Fills content
+		APPEND ~%2daFilename%.2da~ ~%coulmnIndexRow%~
+		APPEND ~%2daFilename%.2da~ ~SWITCH%TAB%%switchRow%~
+		APPEND ~%2daFilename%.2da~ ~DEFAULT%TAB%%strrefRow%~
+
+	// --- Formating 2DA file (It is recommended to use PRETTY_PRINT_2DA after all the content of the 2DA is written into file or else inconsistent behaviour can happen.)	
+	COPY ~./%2daLocation%/%2daFilename%.2da~ ~./%2daLocation%/%2daFilename%.2da~ PRETTY_PRINT_2DA
+
+END // End of "CREATE_READINGSEQUENCE_2DA"
+
+
+
+// Purpose: Adds a conversable item(Such as Lilarcor) into the ITEMDIAL.2DA.
+// -------------------------------------------------------------------------
+// Parameters:|
+// ============
+// strref 		-> 	This is a string reference from dialog.tlk that 
+//					references to the text for the button in the item's description windows.
+// itemName 	-> 	This is the filename of the item with which a conversation is possible (Tag is set to Conversable).
+// dialogFile 	-> 	(Optional) The filename of the dialogue file for the item. If not provided, 
+//               	the `itemName` will be used as the dialogue filename.
+DEFINE_DIMORPHIC_FUNCTION ~ADD_CONVERSABLE_ITEM_IN_2DA~
+	INT_VAR
+		strref 		= "-1"
+	STR_VAR
+		itemName 	= "!_NULL"
+		dialogFile	= "!_NULL"
+BEGIN
+	// Checks if the string reference value is not a negative value.
+	ACTION_IF (~%strref%~ < 0) THEN
+	BEGIN
+		FAIL ~DEFINE_DIMORPHIC_FUNCTION ADD_CONVERSABLE_ITEM_IN_2DA -> The provided value for the 'strref' parameter, '%strref%', is not a valid non-negative integer. Please ensure you provide a whole number greater than or equal to 0.~
+	END
+	// Check if valid itemName argument is given.
+	ACTION_IF (~%itemName%~ STRING_EQUAL ~!_NULL~) THEN 
+	BEGIN
+		FAIL ~DEFINE_ACTION_FUNCTION CREATE_READINGSEQUENCE_2DA -> The correct argument for itemName is missing. The argument !_NULL is forbidden.~
+	END
+	// Checks if item name has more than 8 characters.
+	ACTION_IF (STRING_LENGTH ~%itemName%~ > 8) THEN
+	BEGIN
+		OUTER_SET numbers = STRING_LENGTH ~%itemName%~
+		FAIL ~DEFINE_ACTION_FUNCTION CREATE_READINGSEQUENCE_2DA -> The argument '%itemName%' for itemName is %numbers% characters long. The maximum allowed length for this argument is 8 characters.~
+	END
+	// Checks if dialog file has more than 8 characters.
+	ACTION_IF (STRING_LENGTH ~%dialogFile%~ > 8) THEN
+	BEGIN
+		OUTER_SET numbers = STRING_LENGTH ~%dialogFile%~
+		FAIL ~DEFINE_ACTION_FUNCTION CREATE_READINGSEQUENCE_2DA -> The argument '%dialogFile%' for dialogFile is %numbers% characters long. The maximum allowed length for this argument is 8 characters.~
+	END
+	
+	// --- BUSINESS LOGIC
+	ACTION_IF (~%dialogFile%~ STRING_EQUAL ~!_NULL~) THEN
+	BEGIN
+		// If dialogFile value is not specified, use itemName value as the dialogue file.
+		APPEND ~ITEMDIAL.2DA~ ~%itemName%      %strref%  %itemName%~
+	END ELSE
+	BEGIN
+		// Adds a new row to the bottom of the file with all the needed information.
+		APPEND ~ITEMDIAL.2DA~ ~%itemName%      %strref%  %dialogFile%~
+	END
+
+END // End of "ADD_CONVERSABLE_ITEM_IN_2DA"
